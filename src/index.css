@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 30% 98%;
+    --foreground: 20 40% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 40% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 40% 20%;
+
+    --primary: 122 30% 25%;
+    --primary-foreground: 60 30% 96%;
+
+    --secondary: 40 30% 65%;
+    --secondary-foreground: 20 40% 20%;
+
+    --muted: 60 10% 90%;
+    --muted-foreground: 25 5% 45%;
+
+    --accent: 45 76% 52%;
+    --accent-foreground: 20 40% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 10% 85%;
+    --input: 20 10% 85%;
+    --ring: 122 30% 25%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 40% 15%;
+    --foreground: 60 30% 96%;
+
+    --card: 20 40% 15%;
+    --card-foreground: 60 30% 96%;
+
+    --popover: 20 40% 15%;
+    --popover-foreground: 60 30% 96%;
+
+    --primary: 122 30% 25%;
+    --primary-foreground: 60 30% 96%;
+
+    --secondary: 40 30% 45%;
+    --secondary-foreground: 60 30% 96%;
+
+    --muted: 12 6% 15%;
+    --muted-foreground: 24 5% 65%;
+
+    --accent: 45 70% 45%;
+    --accent-foreground: 60 30% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 30% 96%;
+
+    --border: 12 6% 25%;
+    --input: 12 6% 25%;
+    --ring: 122 30% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .tea-container {
+    @apply container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold font-playfair text-tea-dark-green relative pb-4 mb-10 inline-block;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-3/4 h-1 bg-tea-gold;
+  }
+  
+  .tea-btn {
+    @apply px-6 py-3 bg-tea-dark-green text-white font-medium rounded-md hover:bg-tea-light-green transition-colors duration-300;
+  }
+  
+  .tea-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden border border-tea-light-brown/20 hover:shadow-lg transition-shadow duration-300;
+  }
+}
