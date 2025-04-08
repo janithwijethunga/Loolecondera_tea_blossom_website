@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import Logo from '../assets/Ceylon_Tea_-_looleconera_v_1x.png'; 
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,8 +17,7 @@ const Navbar = () => {
       <div className="tea-container">
         <nav className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-tea-dark-green font-playfair">Loolecondera</span>
-            <span className="ml-1 text-tea-gold text-2xl">.lk</span>
+            <img src={Logo} alt="Tea Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
