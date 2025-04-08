@@ -10,6 +10,9 @@ import CeylonBlackTea from "../assets/CeylonBlackTea.png";
 import CeylonGreenTea from "../assets/CeylonGreenTea.png";
 import CeylonOolongTea from "../assets/CeylonOolongTea.png";
 import CeylonWhiteTea from "../assets/CeylonWhiteTea.png";
+import CeylonTea from "../components/ceylonTea";
+import Specialist from "../components/specialties"
+import History from "../components/history";
 
 const Index = () => {
   const teaTypes = [
@@ -23,21 +26,21 @@ const Index = () => {
     {
       title: "Ceylon Green Tea",
       description:
-        "Offers a delicate, vegetal flavor with a subtle aroma. Best served hot, often enjoyed plain or with a squeeze of lemon.",
+        "Green tea is a lighter, milder variety of Ceylon tea that is known for its delicate, vegetal flavor and subtle aroma. It is typically served hot and can be enjoyed plain or with a squeeze of lemon.",
       image: CeylonGreenTea,
       link: "/products",
     },
     {
       title: "Ceylon Oolong Tea",
       description:
-        "Celebrated for its complex and nuanced taste, featuring floral, fruity, and nutty notes, varying from light and delicate to rich and robust.",
+        "Oolong tea is often prized for its complex and nuanced taste. It can have floral, fruity, and even nutty notes, depending on the specific variety and processing methods. The flavor profile can range from light and delicate to rich and robust.",
       image: CeylonOolongTea,
       link: "/products",
     },
     {
       title: "Ceylon White Tea",
       description:
-        "A rare variety made from the youngest tea leaves and buds, known for its light, sweet flavor and floral aroma.",
+        "White tea is a rare and delicate variety of Ceylon tea that is made from the youngest tea leaves and buds. It is known for its light, sweet flavor and floral aroma and is typically served hot.",
       image: CeylonWhiteTea,
       link: "/products",
     },
@@ -49,7 +52,7 @@ const Index = () => {
 
       {/* Banner 2 */}
       <div>
-        <img src={Banner2} alt="Hero Banner" className="w-full object-cover rounded-b-3xl shadow-lg" />
+        <img src={Banner2} alt="Hero Banner" className="w-full object-cover" />
       </div>
 
       {/* Premium Tea Section with Banner 3 Background */}
@@ -59,7 +62,7 @@ const Index = () => {
           alt="Hero Banner"
           className="absolute w-full h-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
         <div className="relative z-10 tea-container py-20">
           <div className="text-center mb-14">
             <h2 className="section-title inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2 text-white text-3xl font-bold tracking-wide">
@@ -87,12 +90,24 @@ const Index = () => {
         </div>
       </section>
 
+      <div>
+        <CeylonTea />
+      </div>
+      <div>
+        <Specialist />
+      </div>
+      <div>
+        <History />
+      </div>
+
       {/* Heritage Section */}
       <section className="py-20 bg-white">
         <div className="tea-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-up">
-              <h2 className="section-title text-tea-dark-green text-3xl font-bold mb-4">Our Heritage</h2>
+              <h2 className="section-title text-tea-dark-green text-3xl font-bold mb-4">
+                Our Heritage
+              </h2>
               <p className="text-gray-700 text-lg mb-6 leading-relaxed">
                 Since 1867, Loolecondera has been at the heart of Ceylon tea
                 production. Our tea estates, nestled in the lush highlands of
