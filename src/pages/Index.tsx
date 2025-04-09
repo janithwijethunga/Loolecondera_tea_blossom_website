@@ -13,6 +13,7 @@ import CeylonWhiteTea from "../assets/CeylonWhiteTea.png";
 import CeylonTea from "../components/ceylonTea";
 import Specialist from "../components/specialties"
 import History from "../components/history";
+import TeaState from "../components/teaState";
 
 const Index = () => {
   const teaTypes = [
@@ -98,6 +99,9 @@ const Index = () => {
       </div>
       <div>
         <History />
+      </div>
+      <div>
+        <TeaState />
       </div>
 
       {/* Heritage Section */}
