@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import HeroBanner from '../components/HeroBanner';
+import HeroBanner from '../components/HomePage/HeroBanner';
 import { MapPin, Phone, Mail, Send, Loader2 } from 'lucide-react';
 import { toast } from "sonner";
 

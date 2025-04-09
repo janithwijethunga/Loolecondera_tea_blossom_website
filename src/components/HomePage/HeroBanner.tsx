@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface HeroBannerProps {
   backgroundImage: string;
@@ -8,9 +8,13 @@ interface HeroBannerProps {
 const HeroBanner: React.FC<HeroBannerProps> = ({ backgroundImage }) => {
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div
+      {/* Animated Background Image */}
+      <motion.div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
       />
     </div>
   );

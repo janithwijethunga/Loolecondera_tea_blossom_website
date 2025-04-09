@@ -1,5 +1,5 @@
 import React from "react";
-import TeaLeaves from "../assets/green-tea-bud-leaves-green-tea-plantations-morning_1x.jpg";
+import TeaLeaves from "../../assets/green-tea-bud-leaves-green-tea-plantations-morning_1x.jpg";
 
 // Functional component with proper type annotation
 const CeylonTea: React.FC = () => {

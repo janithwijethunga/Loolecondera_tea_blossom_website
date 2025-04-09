@@ -1,6 +1,6 @@
 import React from "react";
-import HeroBanner from "../components/HeroBanner";
-import TeaCard from "../components/TeaCard";
+import HeroBanner from "../components/HomePage/HeroBanner";
+import TeaCard from "../components/HomePage/TeaCard";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import heroBannerImage from "../assets/Hero cover_1x.jpg";
@@ -10,10 +10,11 @@ import CeylonBlackTea from "../assets/CeylonBlackTea.png";
 import CeylonGreenTea from "../assets/CeylonGreenTea.png";
 import CeylonOolongTea from "../assets/CeylonOolongTea.png";
 import CeylonWhiteTea from "../assets/CeylonWhiteTea.png";
-import CeylonTea from "../components/ceylonTea";
-import Specialist from "../components/specialties"
-import History from "../components/history";
-import TeaState from "../components/teaState";
+import CeylonTea from "../components/HomePage/ceylonTea";
+import Specialist from "../components/HomePage/specialties"
+import History from "../components/HomePage/history";
+import TeaState from "../components/HomePage/teaState";
+import WorldWide from "../components/HomePage/wordwide"
 
 const Index = () => {
   const teaTypes = [
@@ -51,7 +52,6 @@ const Index = () => {
     <div>
       <HeroBanner backgroundImage={heroBannerImage} />
 
-      {/* Banner 2 */}
       <div>
         <img src={Banner2} alt="Hero Banner" className="w-full object-cover" />
       </div>
@@ -102,6 +102,9 @@ const Index = () => {
       </div>
       <div>
         <TeaState />
+      </div>
+      <div>
+<WorldWide />
       </div>
 
       {/* Heritage Section */}

@@ -1,7 +1,7 @@
 import React from "react";
-import Background from "../assets/bg1.jpg";
-import Img1 from "../assets/bestProvider.png";
-import Img2 from "../assets/ceylonTea.png";
+import Background from "../../assets/bg1.jpg";
+import Img1 from "../../assets/bestProvider.png";
+import Img2 from "../../assets/ceylonTea.png";
 import {
   CoffeeOutlined,
   SafetyCertificateOutlined,
