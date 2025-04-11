@@ -1,5 +1,5 @@
 import React from "react";
-import Lion from "../../assets/greenlion.png";
+import Lion from "../../assets/Homepage/greenlion.png";
 
 const Worldwide = () => {
   return (
@@ -85,13 +85,13 @@ const Worldwide = () => {
               <div className="relative">
                 {/* Rotating circles animation */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-64 h-64 rounded-full border-4 border-green-700 opacity-30 animate-spin-slow"></div>
-                  <div className="w-72 h-72 rounded-full border-4 border-dashed border-green-700 opacity-20 animate-reverse-spin"></div>
+                  <div className="w-64 h-64 rounded-full border-4 border-green-900 opacity-30 animate-spin-slow"></div>
+                  <div className="w-72 h-72 rounded-full border-4 border-dashed border-green-900 opacity-20 animate-reverse-spin"></div>
                 </div>
 
                 {/* Green glow effect */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-56 h-56 rounded-full bg-green-500 opacity-40 blur-md"></div>
+                  <div className="w-56 h-56 rounded-full bg-green-500  blur-md"></div>
                 </div>
 
                 {/* Lion image placeholder */}

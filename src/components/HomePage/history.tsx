@@ -1,6 +1,6 @@
 import React from 'react';
-import Old1 from '../../assets/old1.png';
-import Old2 from '../../assets/old2.png';
+import Old1 from '../../assets/Homepage/old1.png';
+import Old2 from '../../assets/Homepage/old2.png';
 
 const History = () => {
   return (

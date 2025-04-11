@@ -23,7 +23,9 @@ const TeaCard: React.FC<TeaCardProps> = ({
     >
       <div className="p-6 flex flex-col items-center">
         {/* Title */}
-        <h3 className="text-white text-xl font-semibold text-center">{title}</h3>
+        <h3 className="text-white text-xl font-semibold text-center">
+          {title}
+        </h3>
         <hr className="w-16 my-2 border-t-2 border-tea-gold rounded-full" />
 
         {/* Image */}

@@ -3,18 +3,25 @@ import HeroBanner from "../components/HomePage/HeroBanner";
 import TeaCard from "../components/HomePage/TeaCard";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import heroBannerImage from "../assets/Hero cover_1x.jpg";
-import Banner2 from "../assets/red banner_1x.jpg";
-import Banner3 from "../assets/tea-plantations-green-mountain-fields-wallpaper-preview_1x.jpg";
-import CeylonBlackTea from "../assets/CeylonBlackTea.png";
-import CeylonGreenTea from "../assets/CeylonGreenTea.png";
-import CeylonOolongTea from "../assets/CeylonOolongTea.png";
-import CeylonWhiteTea from "../assets/CeylonWhiteTea.png";
+import heroBannerImage from "../assets/Homepage/Hero cover_1x.jpg";
+import Banner2 from "../assets//Homepage/red banner_1x.jpg";
+import Banner3 from "../assets/Homepage/tea-plantations-green-mountain-fields-wallpaper-preview_1x.jpg";
+import BG from "../assets/Homepage/bg3.jpg"
+import CeylonBlackTea from "../assets/Homepage/CeylonBlackTea.png";
+import CeylonGreenTea from "../assets/Homepage/CeylonGreenTea.png";
+import CeylonOolongTea from "../assets/Homepage/CeylonOolongTea.png";
+import CeylonWhiteTea from "../assets/Homepage/CeylonWhiteTea.png";
 import CeylonTea from "../components/HomePage/ceylonTea";
-import Specialist from "../components/HomePage/specialties"
+import Specialist from "../components/HomePage/specialties";
 import History from "../components/HomePage/history";
 import TeaState from "../components/HomePage/teaState";
-import WorldWide from "../components/HomePage/wordwide"
+import WorldWide from "../components/HomePage/wordwide";
+import TeaCollection from "../components/HomePage/teaCollection";
+import TeaVideo from "../components/HomePage/teaVideo";
+import OldImg from "../assets/Homepage/oldbuilding.png"
+
+
+
 
 const Index = () => {
   const teaTypes = [
@@ -104,7 +111,34 @@ const Index = () => {
         <TeaState />
       </div>
       <div>
-<WorldWide />
+        <WorldWide />
+      </div>
+      <div>
+        <TeaCollection />
+      </div>
+      <div>
+        <TeaVideo />
+      </div>
+      <div>
+      <div className="relative w-full">
+      {/* Background Image */}
+      <div>
+        <img
+          src={BG}
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover "
+        />
+      </div>
+      
+      {/* Text Overlay */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-fullb p-8">
+        <h1 className="text-white text-4xl md:text-6xl font-dancingfont Italic text-center leading-relaxed">
+          <span className="block">enjoy the best cup of</span>
+          <span className="block text-5xl md:text-7xl mt-2">Ceylon Tea</span>
+        </h1>
+        <div className="w-16 h-1 bg-white mt-4 mb-6"></div>
+      </div>
+    </div>
       </div>
 
       {/* Heritage Section */}
@@ -140,7 +174,7 @@ const Index = () => {
               style={{ animationDelay: "0.2s" }}
             >
               <img
-                src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&q=80"
+                src={OldImg}
                 alt="Tea plantation"
                 className="w-full h-full object-cover"
               />

@@ -2,6 +2,15 @@
 import React from 'react';
 import HeroBanner from '../components/HomePage/HeroBanner';
 import ProductCard from '../components/ProductCard';
+import HeroImg from '../assets/Products/ProductsHero.jpg';
+import Product1 from '../assets/Products/Product1.jpg';
+import Product2 from '../assets/Products/Product2.jpg';
+import Product3 from '../assets/Products/Product3.jpg';
+import Product4 from '../assets/Products/Product4.jpg';
+import Product5 from '../assets/Products/Product5.jpg';
+import Product6 from '../assets/Products/Product6.jpg';
+import Product7 from '../assets/Products/Product7.jpg';
+import Product8 from '../assets/Products/Product8.jpg';
 
 const Products = () => {
   const products = [
@@ -9,58 +18,58 @@ const Products = () => {
       name: "Orange Pekoe (OP)",
       description: "Whole, unbroken tea leaves from the top two leaves and a bud.",
       price: "1.20",
-      image: "https://images.unsplash.com/photo-1565799563684-0a3f2ef5b5fb?auto=format&fit=crop&q=80"
+      image: Product1
     },
     {
       name: "Broken Orange Pekoe (BOP)",
       description: "Broken leaves that brew a stronger, more robust flavor.",
       price: "1.20",
-      image: "https://images.unsplash.com/photo-1514517604298-cf80e0fb7f1e?auto=format&fit=crop&q=80"
+      image: Product2
     },
     {
       name: "Flowery Broken Orange Pekoe (FBOP)",
       description: "Includes young buds or tips, adding complexity and delicacy to the flavor profile.",
       price: "1.20",
-      image: "https://images.unsplash.com/photo-1529930305458-79fad2f2b9e7?auto=format&fit=crop&q=80"
+      image: Product3
     },
     {
       name: "FBOP Extra Special 1",
       description: "A higher quality grade within the FBOP category, indicating superior quality.",
       price: "1.20",
-      image: "https://images.unsplash.com/photo-1541959833400-049d37f98ccd?auto=format&fit=crop&q=80"
+      image: Product4
     },
     {
       name: "Pekoe",
       description: "Known for producing a milder and more delicate cup of tea compared to coarser leaves.",
       price: "1.20",
-      image: "https://images.unsplash.com/photo-1546342280-a995079e5ba4?auto=format&fit=crop&q=80"
+      image: Product5
     },
     {
       name: "Dust #1",
       description: "Small particle size that brews quickly, producing a strong, robust cup of tea.",
       price: "1.20",
-      image: "https://images.unsplash.com/photo-1535403856236-92d6da53e645?auto=format&fit=crop&q=80"
+      image: Product6
     },
     {
       name: "Silver Tips",
       description: "Delicate buds minimally processed to preserve natural characteristics, offering a light, floral, and slightly sweet flavor.",
       price: "1.20",
-      image: "https://images.unsplash.com/photo-1523920290228-4f321a939b4c?auto=format&fit=crop&q=80"
+      image: Product7
     },
     {
       name: "Golden Tips",
       description: "Renowned for exquisite flavor and aroma, with carefully plucked buds ensuring quality.",
       price: "1.20",
-      image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&q=80"
+      image: Product8
     }
   ];
 
   return (
     <div>
       <HeroBanner 
-        title="Our Products" 
+        title="Our Products"
         subtitle="Explore our premium range of Ceylon teas"
-        backgroundImage="https://images.unsplash.com/photo-1582793988951-9aed5f8f1d52?auto=format&fit=crop&q=80"
+        backgroundImage={HeroImg}
       />
       
       <section className="py-16 bg-white">

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import BackgroundImg from "../../assets/bg2.jpg";
-import Img from "../../assets/old3.png";
+import BackgroundImg from "../../assets/Homepage/bg2.jpg";
+import Img from "../../assets/Homepage/old3.png";
 
 const LoolkanduraTeaEstate = () => {
   // Subtle scroll animation effect

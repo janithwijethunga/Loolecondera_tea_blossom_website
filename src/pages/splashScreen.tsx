@@ -24,7 +24,9 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
       <motion.div
         className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50"
         initial={{ opacity: 0, scale: 1 }}
-        animate={zooming ? { scale: 1.15, opacity: 0 } : { scale: 1, opacity: 1 }}
+        animate={
+          zooming ? { scale: 1.15, opacity: 0 } : { scale: 1, opacity: 1 }
+        }
         exit={{ opacity: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
@@ -59,16 +61,6 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
               }}
             />
           </motion.div>
-
-          {/* Subtitle Text */}
-          <motion.p
-            className="mt-6 text-black text-xl tracking-wide font-semibold"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6, duration: 1 }}
-          >
-            Entering the world of Ceylon's finest ...
-          </motion.p>
         </motion.div>
       </motion.div>
     </AnimatePresence>
