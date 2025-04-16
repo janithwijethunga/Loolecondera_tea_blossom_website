@@ -113,6 +113,8 @@ export default {
 			fontFamily: {
 				'playfair': ['"Playfair Display"', 'serif'],
 				'poppins': ['Poppins', 'sans-serif'],
+				'Eurotypo': ['Eurotypo', 'sans-serif'],
+				'dancingfont': ['Dancing Script', 'cursive'],
 			}
 		}
 	},

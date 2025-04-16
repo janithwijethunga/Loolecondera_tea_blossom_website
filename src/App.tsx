@@ -1,9 +1,10 @@
-
+import React, { useState, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SplashScreen from "./pages/splashScreen";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
@@ -16,13 +17,31 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+
+  const [showSplash, setShowSplash] = useState(true);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 50000); // splash screen duration
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+
+    return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {showSplash ? (
+          <SplashScreen onFinish={() => setShowSplash(false)} />
+        ) : (
       <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen font-poppins ">
           <Navbar />
           <main className="flex-grow">
             <Routes>
@@ -38,8 +57,10 @@ const App = () => (
           <Footer />
         </div>
       </BrowserRouter>
+       )}
     </TooltipProvider>
   </QueryClientProvider>
-);
+    )
+};
 
 export default App;
