@@ -20,7 +20,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ backgroundImage, title, subtitl
       />
 
       {/* Overlay for visibility */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
+      <div className="absolute inset-0 z-10" />
 
       {/* Title Content */}
       <div className="relative z-20 px-4">
