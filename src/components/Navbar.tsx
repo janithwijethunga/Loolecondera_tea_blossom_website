@@ -40,6 +40,9 @@ const Navbar = () => {
             <Link to="/contact" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
               Contact
             </Link>
+            <Link to="/investintea" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
+            Invest in Tea
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

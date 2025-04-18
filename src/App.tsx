@@ -14,6 +14,7 @@ import History from "./pages/History";
 import Touring from "./pages/Touring";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Investintea from "./pages/investintea";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,8 @@ const App = () => {
               <Route path="/history" element={<History />} />
               <Route path="/touring" element={<Touring />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/investintea" element={<Investintea />} />
+              {/* Add more routes as needed */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

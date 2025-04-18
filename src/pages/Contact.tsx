@@ -1,214 +1,251 @@
+import React, { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Send, ChevronDown } from "lucide-react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import headerImage from "../assets/cbg.jpg"; // Use your own image path
 
-import React, { useState } from 'react';
-import HeroBanner from '../components/HomePage/HeroBanner';
-import { MapPin, Phone, Mail, Send, Loader2 } from 'lucide-react';
-import { toast } from "sonner";
+const ContactPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubjectOpen, setIsSubjectOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState(null);
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
+  const subjects = [
+    "General Inquiry",
+    "Tea Tours Booking",
+    "Product Information",
+    "Feedback",
+    "Partnership Opportunities",
+  ];
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
+    if (!name || !email || !subject || !message) {
+      setFormStatus({ type: "error", message: "Please fill all fields" });
+      return;
+    }
+
+    setFormStatus({ type: "loading", message: "Sending message..." });
     setTimeout(() => {
-      setIsSubmitting(false);
-      toast.success("Your message has been sent successfully!");
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      setFormStatus({ type: "success", message: "Message sent successfully!" });
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setTimeout(() => setFormStatus(null), 3000);
     }, 1500);
   };
 
+  const position = [6.8859313, 79.9056608]; // Pitakotte
+
   return (
-    <div>
-      <HeroBanner 
-        title="Contact Us" 
-        subtitle="We'd love to hear from you"
-        backgroundImage="https://images.unsplash.com/photo-1557248297-ca38a9acaa0a?auto=format&fit=crop&q=80"
-      />
-      
-      <section className="py-16 bg-white">
-        <div className="tea-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="animate-fade-up">
-              <h2 className="section-title">Get in Touch</h2>
-              <p className="text-lg text-gray-700 mb-8">
-                For inquiries about our products, tea tours, or any other information, please don't hesitate to contact us. We're here to assist you.
+    <div className="bg-gradient-to-b from-amber-50 to-amber-100 min-h-screen">
+      {/* Decorative Header Image */}
+      <div className="w-full h-64 overflow-hidden">
+        <img
+          src={headerImage}
+          alt="Contact Banner"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Form and Info */}
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-green-800 mb-2">
+            Get in Touch
+          </h1>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
+          <p className="text-gray-600 max-w-lg mx-auto">
+            We'd love to hear from you. Whether you have questions about our
+            products, tea tours, or anything else, our team is ready to assist
+            you.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Contact Info */}
+          <div className="lg:col-span-1 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-green-800 text-white py-6 px-6">
+              <h2 className="text-2xl font-semibold">Contact Information</h2>
+              <p className="mt-2 text-green-100">
+                Reach out to us through any of these channels.
               </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <MapPin size={24} className="text-tea-gold mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-medium text-tea-dark-green mb-1">Our Address</h3>
-                    <p className="text-gray-700">12, 2nd Lane, Beddagana Road, Pitakotte, Sri Lanka</p>
-                  </div>
+            </div>
+            <div className="p-6 space-y-6">
+              <div className="flex items-start">
+                <div className="bg-green-100 p-3 rounded-full">
+                  <MapPin className="h-6 w-6 text-green-800" />
                 </div>
-                
-                <div className="flex items-start">
-                  <Phone size={24} className="text-tea-gold mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-medium text-tea-dark-green mb-1">Phone Number</h3>
-                    <p className="text-gray-700">+94 763006555</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Mail size={24} className="text-tea-gold mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-medium text-tea-dark-green mb-1">Email Address</h3>
-                    <p className="text-gray-700">info@boswingroup.com</p>
-                  </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-medium text-gray-800">
+                    Our Address
+                  </h3>
+                  <p className="text-gray-600 mt-1">
+                    12, 2nd Lane, Beddagana Road, Pitakotte, Sri Lanka
+                  </p>
                 </div>
               </div>
-              
-              <div className="mt-10">
-                <h3 className="text-xl font-bold text-tea-dark-green mb-4">Business Hours</h3>
-                <table className="w-full text-left">
-                  <tbody>
-                    <tr className="border-b border-tea-light-brown/20">
-                      <td className="py-2 font-medium">Monday - Friday</td>
-                      <td className="py-2">9:00 AM - 5:00 PM</td>
-                    </tr>
-                    <tr className="border-b border-tea-light-brown/20">
-                      <td className="py-2 font-medium">Saturday</td>
-                      <td className="py-2">9:00 AM - 3:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td className="py-2 font-medium">Sunday</td>
-                      <td className="py-2">Closed</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div className="flex items-start">
+                <div className="bg-green-100 p-3 rounded-full">
+                  <Phone className="h-6 w-6 text-green-800" />
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-medium text-gray-800">
+                    Phone Number
+                  </h3>
+                  <p className="text-gray-600 mt-1">+94 763006555</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="bg-green-100 p-3 rounded-full">
+                  <Mail className="h-6 w-6 text-green-800" />
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-medium text-gray-800">
+                    Email Address
+                  </h3>
+                  <p className="text-gray-600 mt-1">info@boswingroup.com</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="bg-green-100 p-3 rounded-full">
+                  <Clock className="h-6 w-6 text-green-800" />
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-medium text-gray-800">
+                    Business Hours
+                  </h3>
+                  <p className="text-gray-600 mt-1">Mon–Fri: 9 AM – 5 PM</p>
+                  <p className="text-gray-600">
+                    Sat: 9 AM – 3 PM | Sun:{" "}
+                    <span className="text-red-500">Closed</span>
+                  </p>
+                </div>
               </div>
             </div>
-            
-            <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <div className="tea-card p-8">
-                <h2 className="text-2xl font-bold text-tea-dark-green mb-6">Send Us a Message</h2>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-gray-700 mb-2">Your Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-tea-dark-green"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 mb-2">Your Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-tea-dark-green"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="subject" className="block text-gray-700 mb-2">Subject</label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-tea-dark-green"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="Product Inquiry">Product Inquiry</option>
-                      <option value="Tea Tour Booking">Tea Tour Booking</option>
-                      <option value="Wholesale">Wholesale</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-gray-700 mb-2">Your Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-tea-dark-green"
-                    ></textarea>
-                  </div>
-                  
+          </div>
+
+          {/* Contact Form */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+                Send Us a Message
+              </h2>
+
+              <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="px-4 py-3 border border-gray-300 rounded-md w-full"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="px-4 py-3 border border-gray-300 rounded-md w-full"
+                  />
+                </div>
+
+                {/* Subject Dropdown */}
+                <div className="mb-6 relative">
                   <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="tea-btn w-full flex items-center justify-center"
+                    type="button"
+                    onClick={() => setIsSubjectOpen(!isSubjectOpen)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md bg-white flex justify-between items-center"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 size={20} className="mr-2 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send size={20} className="mr-2" />
-                        Send Message
-                      </>
-                    )}
+                    <span
+                      className={subject ? "text-gray-900" : "text-gray-400"}
+                    >
+                      {subject || "Select a subject"}
+                    </span>
+                    <ChevronDown className="h-5 w-5 text-gray-400" />
                   </button>
-                </form>
-              </div>
+                  {isSubjectOpen && (
+                    <ul className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
+                      {subjects.map((item) => (
+                        <li
+                          key={item}
+                          onClick={() => {
+                            setSubject(item);
+                            setIsSubjectOpen(false);
+                          }}
+                          className="px-4 py-2 hover:bg-green-50 cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                {/* Message Field */}
+                <textarea
+                  placeholder="Your Message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md mb-6"
+                ></textarea>
+
+                {/* Status Message */}
+                {formStatus && (
+                  <div
+                    className={`mb-4 p-4 rounded-md ${
+                      formStatus.type === "error"
+                        ? "bg-red-50 text-red-800"
+                        : formStatus.type === "success"
+                        ? "bg-green-50 text-green-800"
+                        : "bg-blue-50 text-blue-800"
+                    }`}
+                  >
+                    {formStatus.message}
+                  </div>
+                )}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full bg-green-800 text-white py-3 px-6 rounded-md hover:bg-green-700 transition-colors flex items-center justify-center"
+                >
+                  <Send className="h-5 w-5 mr-2" />
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>
-      </section>
-      
-      <section className="py-16 bg-tea-cream">
-        <div className="tea-container">
-          <div className="text-center mb-12">
-            <h2 className="section-title inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2">
-              Find Us
-            </h2>
-          </div>
-          
-          <div className="rounded-lg overflow-hidden shadow-lg h-96">
-            {/* Embed a Google Maps iframe here. For this example, using a placeholder */}
-            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-              <p className="text-gray-700 px-4 text-center">
-                Interactive map would be embedded here using Google Maps API with the address: 12, 2nd Lane, Beddagana Road, Pitakotte, Sri Lanka
-              </p>
-            </div>
-          </div>
+      </div>
+
+      {/* Leaflet Map */}
+      <div className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-green-800 mb-2">Find Us</h2>
+          <div className="w-16 h-1 bg-yellow-400 mx-auto"></div>
         </div>
-      </section>
+        <div className="bg-white p-4 rounded-lg shadow-lg">
+          <MapContainer
+            center={position}
+            zoom={15}
+            scrollWheelZoom={false}
+            className="w-full h-96 rounded-md"
+          >
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Marker position={position}>
+              <Popup>
+                Boswin Group <br /> 12, 2nd Lane, Beddagana Road, Pitakotte
+              </Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Contact;
+export default ContactPage;

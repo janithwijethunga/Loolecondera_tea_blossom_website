@@ -24,6 +24,11 @@ import chday6 from "../assets/Tours/chday6.jpg";
 import chday7 from "../assets/Tours/chday7.jpg";
 import chday8 from "../assets/Tours/chday8.jpg";
 
+import blacktea from "../assets/Homepage/CeylonBlackTea.png";
+import greentea from "../assets/Homepage/CeylonGreenTea.png";
+import oolongtea from "../assets/Homepage/CeylonOolongTea.png";
+import whitetea from "../assets/Homepage/CeylonWhiteTea.png";
+
 const TeaTouringPage = () => {
   const [activeTab, setActiveTab] = useState("srilanka");
 
@@ -40,10 +45,10 @@ const TeaTouringPage = () => {
       Ella: slday4,
       Galle: slday5,
       Colombo: slday6,
-      Beijing: "/api/placeholder/400/300",
-      Shanghai: "/api/placeholder/400/300",
-      Hangzhou: "/api/placeholder/400/300",
-      Fujian: "/api/placeholder/400/300",
+      Beijing: "https://media.istockphoto.com/id/482334184/photo/night-on-beijing-central-business-district-buildings-skyline-china-cityscape.jpg?s=612x612&w=0&k=20&c=gd1nunX5dLfHTAyyqTE2frn4Iw-dzyr60YqJGaK2M4U=",
+      Shanghai: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg/960px-Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg",
+      Hangzhou: "https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2F2018_10_4_Blog-Header.jpg&w=3840&q=75",
+      Fujian: "https://cdn.britannica.com/13/123013-050-F3CDC5C6/Temple-Fuzhou-China.jpg",
     },
     // Added images for itinerary days
     sriLankaItinerary: {
@@ -66,11 +71,10 @@ const TeaTouringPage = () => {
       day8: chday8,
     },
     teaTypes: {
-      blackTea: "/api/placeholder/300/200",
-      greenTea: "/api/placeholder/300/200",
-      oolongTea: "/api/placeholder/300/200",
-      whiteTea: "/api/placeholder/300/200",
-      puerhTea: "/api/placeholder/300/200",
+      blackTea: blacktea,
+      greenTea: greentea,
+      oolongTea: oolongtea,
+      whiteTea: whitetea,
     },
     hotels: {
       jetwingBlue: "/api/placeholder/300/200",
@@ -193,8 +197,26 @@ const TeaTouringPage = () => {
     {
       day: "DAY 1",
       title: "KATUNAYAKE | NEGOMBO",
-      description:
-        "Arrival at the Bandaranaike International Airport in Katunayake, formalities for entry and baggage claim. Meeting with the tour guide and travel to Negombo. Negombo is slightly north of Colombo and close to the airport, and was formerly the centre of the cinnamon trade. It is home to a picturesque lagoon, numerous Catholic churches, and an impressive network of canals built by the Dutch which are currently being restored. It also has an active fishing industry and a bustling fish market known as 'Lellama'.",
+      description: (
+        <div>
+          <p>
+            Arrival at the Bandaranaike International Airport in Katunayake,
+            formalities for entry and baggage claim. Meeting with the tour guide
+            and travel to Negombo.
+          </p>
+          <br />
+          <p>
+            Negombo is slightly north of Colombo and close to the airport, and
+            was formerly the centre of e cinnamon trade. It is home to a
+            picturesque lagoon, numerous Catholic churches and an impressive
+            network of canals built by the Dutch which are currently being
+            restored. It also has an active fishing industry and a bustling fish
+            market known as 'Lellama' .
+          </p>
+          <br />
+        </div>
+      ),
+
       accommodation: "Dinner and overnight stay at Jetwing Blue.",
       image: images.sriLankaItinerary.day1,
       imageAlt: "Negombo Beach and Dutch Canal",
@@ -202,8 +224,25 @@ const TeaTouringPage = () => {
     {
       day: "DAY 2",
       title: "NEGOMBO | KANDY | NUWARA ELIYA",
-      description:
-        "Breakfast at Negombo and departure to Kandy. Arrival in Kandy in the afternoon, visit to the Temple of the Tooth Relic, which houses the most revered tooth relic of the Lord Buddha; this is a place of utmost importance to Sri Lankan Buddhists as it bears extraordinary testimonies of the past with its greatest symbol of Buddhism. Departure to Nuwara Eliya, visit Ramboda Falls and Bloomfield Tea Estate and tea factory en route to Nuwara Eliya.",
+      description: (
+        <div>
+          <p>Breakfast at Negombo and departure to Kandy.</p>
+          <p>
+            Arrival in Kandy in the afternoon, Visit to the Temple of the Tooth
+            Relic, which houses the most revered tooth relic of the Lord Buddha;
+            this is a place of utmost importance to Sri Lankan buddhists as it
+            bears extraordinary testimonies of the past with its greatest symbol
+            of Buddhism.
+          </p>
+          <br />
+          <p>
+            Departure to Nuwara Eliya, visit Ramboda Falls and Bloomfield Tea
+            Estate and tea factory en route to Nuwara Eliya
+          </p>
+          <br />
+        </div>
+      ),
+
       accommodation:
         "Dinner and overnight stay at The Grand Hotel - Nuwara Eliya.",
       image: images.sriLankaItinerary.day2,
@@ -212,8 +251,25 @@ const TeaTouringPage = () => {
     {
       day: "DAY 3",
       title: "NUWARA ELIYA | TALAWAKELLE | ELLA",
-      description:
-        "Breakfast at the Grand Hotel and departure to Tea Research Institute and St. Coombes Tea Factory and Tea Estate in Talawakelle. Departure to Ella in the evening and overnight stay at Ella. Ella is a town located in Sri Lanka's Uva Province which has a rich biodiversity, dense with numerous varieties of flora and fauna. Ella is surrounded by hills covered with cloud forests and tea plantations.",
+      description: (
+        <div>
+          <p>
+            Breakfast at the Grand Hotel and departure to Tea Research Institute
+            and St. Coombes Tea Factory and Tea Estate in Talawakelle.
+          </p>
+          <br />
+          <p>Departure to Ella in the evening and overnight stay at Ella.</p>
+          <br />
+          <p>
+            Ella is a town located in Sri Lanka's Uva Province which hasa rich
+            biodiversity, dense with numerous varieties of flora and fauna. Ella
+            is surrounded by hills covered with cloud forests and tea
+            plantations.
+          </p>
+          <br />
+        </div>
+      ),
+
       accommodation: "Overnight stay at Ella.",
       image: images.sriLankaItinerary.day3,
       imageAlt: "Tea Research Institute in Talawakelle",
@@ -221,8 +277,21 @@ const TeaTouringPage = () => {
     {
       day: "DAY 4",
       title: "ELLA | GALLE | AHUNGALLA",
-      description:
-        "Breakfast at Ella and departure to Galle. Galle is a city on the southwest coast of Sri Lanka. It's known for Galle Fort, the fortified old city founded by Portuguese colonists in the 16th century. Stone sea walls, expanded by the Dutch, encircle car-free streets with architecture reflecting Portuguese, Dutch, and British rule. Visiting Galle Fort and departing Galle to the Hotel Riu, Ahungalla for lunch, dinner, and overnight stay.",
+      description: (
+        <div>
+          <p>Breakfast at Ella and departure to Galle</p>
+          <br />
+          <p>
+            Galle is a city on the southwest coast of Sri Lanka. It’s known for
+            Galle Fort, the fortified old city founded by Portuguese colonists
+            in the 16th century. Stone sea walls, expanded by the Dutch,
+            encircle car-free streets with architecture reflecting Portuguese,
+            Dutch and British rule.
+          </p>
+          <p></p>
+        </div>
+      ),
+
       accommodation:
         "Lunch, dinner, and overnight stay at Hotel Riu, Ahungalla. (Tourists can opt to take the Madu River boat tour upon personal request.)",
       image: images.sriLankaItinerary.day4,
@@ -240,8 +309,17 @@ const TeaTouringPage = () => {
     {
       day: "DAY 6",
       title: "AHUNGALLA | COLOMBO",
-      description:
-        "Breakfast at the Hotel Riu and departure to Colombo at 6:30 am. Arrival at Colombo, visiting the tea auction at the National Chamber of Commerce, Colombo, Sri Lanka Tea Board, and Port City. Lunch at Colombo and check-in, dinner, and overnight stay at Cinnamon Grand, Colombo.",
+      description: (
+        <div>
+          <p>Breakfast at the Hotel Riu and departure to Colombo at 6:30am</p>
+          <br />
+          <p>
+            Arrival at Colombo, visiting the tea auction at the National Chamber
+            of Commerce, Colombo, Sri Lanka Tea board and Port City.
+          </p>
+        </div>
+      ),
+
       accommodation: "Dinner and overnight stay at Cinnamon Grand, Colombo.",
       image: images.sriLankaItinerary.day6,
       imageAlt: "Tea Auction at National Chamber of Commerce",
@@ -249,8 +327,20 @@ const TeaTouringPage = () => {
     {
       day: "DAY 7",
       title: "COLOMBO | KATUNAYAKE",
-      description:
-        "Breakfast and checkout of Cinnamon Grand at 12:00 pm. Tourists are free to tour the city of Colombo and shop within the city. Departure from Colombo to the Bandaranaike International Airport at around 3:30 pm - 4:00 pm.",
+      description: (
+        <div>
+          <p>
+            Breakfast and checkout of Cinnamon Grand at 12.00pm Tourists are
+            free to tour the city of Colombo and shop within the city
+          </p>
+          <br />
+
+          <p>
+            Departure from Colombo to the Bandaranaike International Airport at
+            around 3.30 pm - 4.00pm
+          </p>
+        </div>
+      ),
       accommodation: "",
       image: images.sriLankaItinerary.day7,
       imageAlt: "Colombo City Skyline",
@@ -276,7 +366,7 @@ const TeaTouringPage = () => {
           environmental science.
         </p>
       ),
-      accommodation: "Overnight stay in Hangzhou.",
+      accommodation: "Sofitel Hangzhou Westlake",
       image: images.chinaItinerary.day1,
       imageAlt: "Zhejiang University Campus",
     },
@@ -290,102 +380,331 @@ const TeaTouringPage = () => {
             various famous varieties. Some well-known types of Chinese black tea
             include:
           </p>
-          <p>
-            <strong>Keemun</strong>: It has a complex aroma and is often used in
-            English Breakfast blends.
+
+          <p className="ml-8">
+            &#x2022; <strong>Keemun</strong>: It has a complex aroma and is
+            often used in English Breakfast blends.
             <br />
-            <strong>Lapsang Souchong</strong>: This tea is distinct due to its
-            smoky flavor, achieved by drying the leaves over pinewood fires.
+            &#x2022; <strong>Lapsang Souchong</strong>: This tea is distinct due
+            to its smoky flavor, achieved by drying the leaves over pinewood
+            fires.
             <br />
-            <strong>Dian Hong (Yunnan Black Tea)</strong>: This tea has a rich,
-            malty flavor with notes of chocolate.
+            &#x2022; <strong>Dian Hong (Yunnan Black Tea)</strong>: This tea has
+            a rich, malty flavor with notes of chocolate.
             <br />
-            <strong>Yixing Black Tea</strong>: This tea is known for its mellow
-            and sweet taste, often with fruity undertones.
+            &#x2022; <strong>Yixing Black Tea</strong>: This tea is known for
+            its mellow and sweet taste, often with fruity undertones.
             <br />
-            <strong>Jin Jun Mei</strong>: Jin Jun Mei is made from young tea
-            buds and is highly prized for its rich and sweet flavor profile.
+            &#x2022; <strong>Jin Jun Mei</strong>: Jin Jun Mei is made from
+            young tea buds and is highly prized for its rich and sweet flavor
+            profile.
           </p>
 
           <p>
-            <strong>Oolong tea</strong> is a traditional Chinese tea that falls
-            between green and black tea in terms of oxidation levels. Popular
-            varieties include Tie Guan Yin, Da Hong Pao, and Dan Cong.
+            Oolong tea is a traditional Chinese tea that falls between green and
+            black tea in terms of oxidation levels. Popular varieties include
+            Tie Guan Yin, Da Hong Pao, and Dan Cong.
           </p>
 
           <p>
-            <strong>Chinese green tea</strong> is celebrated for its delicate
-            flavors, health benefits, and cultural significance. Here are some
-            notable varieties:
+            Chinese green tea is celebrated for its delicate flavors, health
+            benefits, and cultural significance. Here are some notable
+            varieties:
           </p>
-          <p>
-            <strong>Longjing</strong>: It has a flat appearance, a mellow,
-            slightly sweet taste, and a distinctive chestnut-like aroma.
+          <p className="ml-8">
+            &#x2022; <strong>Longjing</strong>: It has a flat appearance, a
+            mellow, slightly sweet taste, and a distinctive chestnut-like aroma.
             <br />
-            <strong>Bi Luo Chun</strong>: Known for its delicate, fruity flavor
-            and floral aroma.
+            &#x2022; <strong>Bi Luo Chun</strong>: Known for its delicate,
+            fruity flavor and floral aroma.
             <br />
-            <strong>Huangshan Maofeng</strong>: This tea features long, slender
-            leaves and offers a refreshing, slightly nutty flavor with floral
-            notes.
+            &#x2022; <strong>Huangshan Maofeng</strong>: This tea features long,
+            slender leaves and offers a refreshing, slightly nutty flavor with
+            floral notes.
             <br />
-            <strong>Gunpowder Tea</strong>: It is known for its rolled leaves
-            resembling pellets. It has a bold taste and is often used in
+            &#x2022; <strong>Gunpowder Tea</strong>: It is known for its rolled
+            leaves resembling pellets. It has a bold taste and is often used in
             Moroccan mint tea.
             <br />
-            <strong>Anji Bai Cha</strong>: Features pale green leaves and offers
-            a sweet, vegetal taste with hints of chestnut.
+            &#x2022; <strong>Anji Bai Cha</strong>: Features pale green leaves
+            and offers a sweet, vegetal taste with hints of chestnut.
             <br />
-            <strong>Tai Ping Hou Kui</strong>: This tea is known for its large,
-            flat leaves and has a smooth, floral taste.
+            &#x2022; <strong>Tai Ping Hou Kui</strong>: This tea is known for
+            its large, flat leaves and has a smooth, floral taste.
           </p>
 
           <p>
-            <strong>Pu'erh tea</strong> is a unique and highly prized type of
-            fermented tea originating from the Yunnan province in China. The
-            taste can vary significantly depending on factors like the region,
-            processing methods, and aging such as earthy, woody, or even
-            mushroom-like flavors, with a smooth and sometimes mellow or
-            slightly astringent taste.
+            Pu'erh tea is a unique and highly prized type of fermented tea
+            originating from the Yunnan province in China. The taste can vary
+            significantly depending on factors like the region, processing
+            methods, and aging such as earthy, woody, or even mushroom-like
+            flavors, with a smooth and sometimes mellow or slightly astringent
+            taste.
           </p>
 
           <p>
-            <strong>Chinese white tea</strong> is a delicate and minimally
-            processed tea known for its subtle flavors and gentle aroma.
+            Chinese white tea is a delicate and minimally processed tea known
+            for its subtle flavors and gentle aroma.
           </p>
-          <p>
-            <strong>Silver Needle (Bai Hao Yinzhen)</strong>: This is one of the
-            most famous types of Chinese white tea. It's made exclusively from
-            young tea buds and is known for its silvery appearance, delicate
-            flavor, and slight sweetness.
+          <p className="ml-8">
+            &#x2022; <strong>Silver Needle (Bai Hao Yinzhen)</strong>: This is
+            one of the most famous types of Chinese white tea. It's made
+            exclusively from young tea buds and is known for its silvery
+            appearance, delicate flavor, and slight sweetness.
             <br />
-            <strong>White Peony (Bai Mudan)</strong>: This tea is slightly
-            bolder than Silver Needle and may have a fuller flavor with floral
-            and fruity notes.
+            &#x2022; <strong>White Peony (Bai Mudan)</strong>: This tea is
+            slightly bolder than Silver Needle and may have a fuller flavor with
+            floral and fruity notes.
           </p>
+          <br />
         </div>
       ),
-      accommodation: "Continued stay in Hangzhou.",
+      accommodation: "Sofitel Hangzhou Westlake",
       image: images.chinaItinerary.day2,
       imageAlt: "Chinese Tea Varieties Display",
     },
     {
       day: "DAY 3",
       title: "LONGJING VILLAGE | HANGZHOU",
-      description:
-        "Visit to Longjing Tea Garden and West Lake Hangzhou Benshan Longjing Tea Museum. Longjing Tea Garden and Tea Factory: These gardens are situated around the West Lake area and along the hillsides surrounding the lake. The region's unique climate, fertile soil, and specific geographical features contribute to the high-quality Longjing tea production. In the vicinity of the tea gardens, there are tea processing facilities or factories where the freshly plucked tea leaves undergo various steps to become the finished Longjing tea.",
-      accommodation: "Overnight stay in Hangzhou.",
+      description: (
+        <div>
+          <p>
+            Visit to Longjing Tea Garden and West Lake Hangzhou Benshan Longjing
+            Tea Museum
+          </p>
+
+          <br />
+          <strong>Longjing Tea Garden And Tea Factory</strong>
+          <p>
+            These gardens are situated around the West Lake area and along the
+            hillsides surrounding the lake. The region's unique climate, fertile
+            soil, and specific geographical features contribute to the
+            high-quality Longjing tea production.
+          </p>
+          <br />
+          <p>
+            In the vicinity of the tea gardens, there are tea processing
+            facilities or factories where the freshly plucked tea leaves undergo
+            various steps to become the finished Longjing tea
+          </p>
+          <br />
+          <strong>West Lake Hangzhou Benshan Longjing Tea Museum</strong>
+          <p>
+            The West Lake Hangzhou Benshan Longjing Tea Museum is a specialized
+            institution dedicated to the cultivation, production, and
+            appreciation of Longjing tea
+          </p>
+          <p>
+            Visiting the West Lake Hangzhou Benshan Longjing Tea Museum provides
+            an opportunity to delve into the world of Longjing tea,
+            understanding its heritage, cultivation, and cultural significance
+            within the context of the West Lake region—a place renowned for its
+            exquisite tea production
+          </p>
+          <br />
+        </div>
+      ),
+
+      accommodation: "Tea Boutique Hotel West Lake, Hangzhou",
       image: images.chinaItinerary.day3,
       imageAlt: "Longjing Tea Gardens",
     },
     {
       day: "DAY 4",
       title: "TEA TASTING AND CHINESE TEA CEREMONY",
-      description:
-        "Tasting session for various Chinese tea types and Chinese tea ceremony conducted by the Sri Lanka - China Cultural Association. Recommended visits include the Hangzhou - Beijing Grand Canal (also known as the Beijing-Hangzhou Grand Canal, it is an ancient waterway in China and one of the world's oldest and longest artificial water systems) and the Qiantang River Bund (The Qiantang River is known for its significant tidal bore and scenic beauty).",
-      accommodation: "Final night in Hangzhou.",
+      description: (
+        <div>
+          <p>
+            Tasting session for various Chinese tea types and Chinese tea
+            ceremony conducted by the Sri Lanka - China cultural association.
+          </p>
+          <br />
+          <p>
+            <strong>Recommended visits :</strong>
+          </p>
+          <br />
+
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              <strong>Hangzhou - Beijing Grand Canal</strong>
+              <br />
+              The Hangzhou-Beijing Grand Canal, also known as the
+              Beijing-Hangzhou Grand Canal, is an ancient waterway in China and
+              one of the world's oldest and longest artificial water systems.
+            </li>
+            <li>
+              <strong>Qiantang River Bund</strong>
+              <br />
+              The Qiantang River is known for its significant tidal bore
+              phenomenon, where a surge of water, often resembling a tidal wave,
+              travels upriver against the current during specific tidal
+              conditions.
+            </li>
+            <li>
+              <strong>Lingyin Temple</strong>
+              <br />
+              Lingyin Temple, also known as the Temple of the Soul's Retreat, is
+              a renowned Buddhist temple located in Hangzhou, Zhejiang Province,
+              China.
+            </li>
+            <li>
+              <strong>Song Dynasty City</strong>
+              <br />
+              The Song Dynasty City (Songcheng) is a large-scale cultural theme
+              park located in Hangzhou, Zhejiang Province, China. It's a
+              recreation of the prosperous and culturally rich Song Dynasty.
+            </li>
+          </ul>
+          <br />
+          <p>Free to travel the city in the evening</p>
+        </div>
+      ),
+
+      accommodation: "Tea Boutique Hotel West Lake, Hangzhou",
       image: images.chinaItinerary.day4,
       imageAlt: "Traditional Chinese Tea Ceremony",
+    },
+    {
+      day: "DAY 5",
+      title: "He Feng avenue | West Lake | Taizhiwan Gardens | Leifeng Pagoda",
+      description: (
+        <div>
+          <p>
+            <strong>He Fang Avenue</strong>
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              He Fang Street is a historic and culturally vibrant pedestrian
+              street in Hangzhou that preserves the traditional charm of the
+              city and serves as a hub for cultural exploration.
+            </li>
+          </ul>
+          <br />
+
+          <p>
+            <strong>West Lake</strong>
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              West Lake, located in Hangzhou, Zhejiang Province, China, is a
+              UNESCO World Heritage Site and one of China's most renowned and
+              picturesque natural landscapes.
+            </li>
+          </ul>
+          <br />
+
+          <p>
+            <strong>Leifeng Pagoda</strong>
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              A historic pagoda standing on the southern banks of West Lake,
+              offering panoramic views of the lake and its surroundings.
+            </li>
+          </ul>
+          <br />
+        </div>
+      ),
+
+      accommodation: "Midtown Shangri-La Hangzhou",
+      image: images.chinaItinerary.day5,
+      imageAlt: "Historic Sites of Hangzhou – West Lake and Pagoda",
+    },
+    {
+      day: "DAY 6",
+      title: "anji white tea plantation | fujian | Hangzhou ",
+      description: (
+        <div>
+          <p>
+            <strong>Anji White Tea Plantation</strong>
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              The Anji White Tea Plantation is a renowned tea-growing region
+              located in Anji County, Zhejiang Province, China. It's famous for
+              producing Anji Bai Cha, a prized variety of white tea known for
+              its unique appearance and delicate flavor profile.
+            </li>
+          </ul>
+          <br />
+
+          <p>
+            <strong>Fujian</strong>
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              Fujian is a coastal province located in southeastern China, known
+              for its rich cultural heritage, diverse landscapes, and historical
+              significance. It is famous for its tea production, cultivating
+              some of China's finest teas.
+            </li>
+          </ul>
+          <br />
+        </div>
+      ),
+
+      accommodation: "Anji Zhebei Hotel (Anji County Stay)",
+      image: images.chinaItinerary.day6,
+      imageAlt: "Anji White Tea Plantation Hills",
+    },
+    {
+      day: "DAY 7",
+      title: "HANgzhou | Shanghai",
+      description: (
+        <div>
+          <p></p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              Studying white and black tea manufacturing and tea tasting at a
+              tea factory in the morning.
+            </li>
+          </ul>
+          <br />
+
+          <p></p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>Departure to Shanghai</li>
+          </ul>
+          <br />
+        </div>
+      ),
+
+      accommodation: "Pudong Shangri-La, East Shanghai",
+      image: images.chinaItinerary.day7,
+      imageAlt: "Shanghai Skyline and Tea Market Tour",
+    },
+    {
+      day: "DAY 8",
+      title: "HANgzhou | Shanghai",
+      description: (
+        <div>
+          <p></p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              Two lectures conducted on "How to enter the Chinese market”
+              opportunity finding session and exploring tea market in China to
+              get experience in the Chinese tea industry
+            </li>
+          </ul>
+          <br />
+
+          <p></p>
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>Certificate awarding in the morning</li>
+          </ul>
+          <br />
+          <ul className="list-disc list-inside space-y-2 ml-8">
+            <li>
+              Free to travel the city after lunch. Departure to Sri Lanka{" "}
+            </li>
+          </ul>
+          <br />
+        </div>
+      ),
+
+      accommodation: "Departure Day",
+      image: images.chinaItinerary.day8,
+      imageAlt: "Lecture Session and City Departure",
     },
   ];
 
@@ -440,12 +759,7 @@ const TeaTouringPage = () => {
         "Minimally processed tea with delicate sweetness. Silver Needle and White Peony are prized examples.",
       image: images.teaTypes.whiteTea,
     },
-    {
-      name: "Pu'erh Tea",
-      description:
-        "Fermented and aged tea from Yunnan province with earthy, deep flavors that improve over time.",
-      image: images.teaTypes.puerhTea,
-    },
+ 
   ];
 
   return (
@@ -661,9 +975,9 @@ const TeaTouringPage = () => {
         <section className="py-12 bg-amber-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-amber-800 mb-10">
-              Discover China's Five Tea Categories
+              Discover China's Four Tea Categories
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {chineseTeaTypes.map((tea, index) => (
                 <div
                   key={index}
@@ -751,7 +1065,7 @@ const TeaTouringPage = () => {
                     </div>
 
                     {/* Two-column layout for desktop */}
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                       {/* Image column (2/5 width on desktop) */}
                       <div className="md:col-span-2">
                         <div className="rounded-lg overflow-hidden shadow-md h-56 md:h-full">
