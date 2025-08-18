@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from '../assets/Ceylon_Tea_-_looleconera_v_1x.png'; 
 
@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+  <header className="bg-white shadow-sm sticky top-0 z-[2000]">
       <div className="tea-container">
         <nav className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center">
@@ -22,24 +22,27 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
+            <NavLink to="/" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
               Home
-            </Link>
-            <Link to="/products" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
+            </NavLink>
+            <NavLink to="/products" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
               Our Products
-            </Link>
-            <Link to="/specialties" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
+            </NavLink>
+            <NavLink to="/specialties" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
               Specialties
-            </Link>
-            <Link to="/history" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
+            </NavLink>
+            <NavLink to="/history" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
               History
-            </Link>
-            <Link to="/touring" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
+            </NavLink>
+            <NavLink to="/touring" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
               Tea Touring
-            </Link>
-            <Link to="/contact" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
+            </NavLink>
+            <NavLink to="/contact" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
               Contact
-            </Link>
+            </NavLink>
+            <NavLink to="/investintea" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
+              Invest in Tea
+            </NavLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,48 +60,48 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white py-4 shadow-md animate-fade-in">
           <div className="tea-container flex flex-col space-y-4">
-            <Link 
-              to="/" 
-              className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2"
+            <NavLink
+              to="/"
               onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
             >
               Home
-            </Link>
-            <Link 
-              to="/products" 
-              className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2"
+            </NavLink>
+            <NavLink
+              to="/products"
               onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
             >
               Our Products
-            </Link>
-            <Link 
-              to="/specialties" 
-              className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2"
+            </NavLink>
+            <NavLink
+              to="/specialties"
               onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
             >
               Specialties
-            </Link>
-            <Link 
-              to="/history" 
-              className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2"
+            </NavLink>
+            <NavLink
+              to="/history"
               onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
             >
               History
-            </Link>
-            <Link 
-              to="/touring" 
-              className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2"
+            </NavLink>
+            <NavLink
+              to="/touring"
               onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
             >
               Tea Touring
-            </Link>
-            <Link 
-              to="/contact" 
-              className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2"
+            </NavLink>
+            <NavLink
+              to="/contact"
               onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
             >
               Contact
-            </Link>
+            </NavLink>
           </div>
         </div>
       )}
