@@ -52,7 +52,7 @@ const History = () => {
               The history of Ceylon tea dates back to 1867 when the British introduced tea cultivation to Sri Lanka as a replacement for coffee. James Taylor, a Scottish planter, established the first tea plantations in the hill country, leveraging the ideal climate and altitude.
             </p>
             <p className="text-lg text-gray-700">
-              Loolecondera Estate, located in Kandy district, holds the distinction of being the birthplace of Ceylon tea. It was here that James Taylor planted the first commercial tea plantation on just 19 acres of land, forever changing Sri Lanka's agricultural landscape.
+              Loolecondera Esherotate, located in Kandy district, holds the distinction of being the birthplace of Ceylon tea. It was here that James Taylor planted the first commercial tea plantation on just 19 acres of land, forever changing Sri Lanka's agricultural landscape.
             </p>
           </div>
           

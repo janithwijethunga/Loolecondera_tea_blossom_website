@@ -359,9 +359,8 @@ const InvestInTeaPage: React.FC = () => {
       </section>
 
       {/* Investment Details */}
-      <section className="py-16 bg-slate-50">
+      {/* <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 max-w-6xl">
-          {/* Header */}
           <div className="relative flex flex-col items-center mb-16">
             <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-green-100 rounded-full opacity-70"></div>
             <h2 className="text-4xl font-bold relative z-10 mb-3 text-center">
@@ -375,14 +374,13 @@ const InvestInTeaPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Calculator Controls */}
+       
           <div className="bg-white p-8 rounded-xl shadow-lg mb-12">
             <h3 className="text-xl font-bold text-slate-800 mb-6">
               Customize Your Investment
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Tea Sets Slider */}
               <div className="space-y-4">
                 <label className="font-medium text-slate-700 flex justify-between">
                   <span>Number of Tea Sets</span>
@@ -401,7 +399,6 @@ const InvestInTeaPage: React.FC = () => {
                 </p>
               </div>
 
-              {/* Years Slider */}
               <div className="space-y-4">
                 <label className="font-medium text-slate-700 flex justify-between">
                   <span>Investment Period (Years)</span>
@@ -420,7 +417,6 @@ const InvestInTeaPage: React.FC = () => {
                 </p>
               </div>
 
-              {/* Currency Selector */}
               <div className="space-y-4">
                 <label className="font-medium text-slate-700">Currency</label>
                 <div className="flex space-x-2">
@@ -445,9 +441,7 @@ const InvestInTeaPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Investment Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {/* Initial Investment Card */}
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-green-500">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center">
@@ -541,7 +535,6 @@ const InvestInTeaPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Investment Period Card */}
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-green-500">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center">
@@ -636,7 +629,6 @@ const InvestInTeaPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Annual Investment Card */}
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-green-500">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center">
@@ -723,7 +715,6 @@ const InvestInTeaPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Investment Summary */}
           <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 overflow-hidden">
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-xl font-bold text-slate-800">
@@ -793,7 +784,7 @@ const InvestInTeaPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Call to action */}
+          
             <div className="mt-8 text-center">
               <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg">
                 Start Your Tea Investment
@@ -805,201 +796,7 @@ const InvestInTeaPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="py-16 bg-gradient-to-br from-amber-50 to-orange-50">
-  <div className="container mx-auto px-4 max-w-6xl">
-    <div className="flex flex-col lg:flex-row items-stretch bg-white rounded-2xl shadow-xl overflow-hidden">
-      {/* Left side - Contact Info */}
-      <div className="lg:w-5/12 bg-gradient-to-br from-amber-500 to-orange-600 p-8 lg:p-12 text-white relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400 rounded-full opacity-20 transform translate-x-1/3 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-700 rounded-full opacity-20 transform -translate-x-1/3 translate-y-1/3"></div>
-        
-        <div className="relative z-10">
-          <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
-          <p className="text-lg mb-10 text-amber-50">
-            We'd love to hear from you! Fill out the form to start a conversation with our team.
-          </p>
-          
-          <div className="space-y-6 mt-12">
-            <div className="p-4 rounded-xl transition-all duration-300 cursor-pointer hover:bg-white hover:bg-opacity-10">
-              <div className="flex items-start">
-                <div className="bg-amber-100 text-amber-800 w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-md">
-                  ✉️
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-xl font-semibold">Email</h3>
-                  <a href="mailto:info@boswingroup.com" className="text-amber-100 hover:text-white hover:underline transition-colors">
-                    info@boswingroup.com
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <div className="p-4 rounded-xl transition-all duration-300 cursor-pointer hover:bg-white hover:bg-opacity-10">
-              <div className="flex items-start">
-                <div className="bg-emerald-100 text-emerald-800 w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-md">
-                  📞
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-xl font-semibold">Phone</h3>
-                  <a href="tel:+94763006555" className="text-amber-100 hover:text-white hover:underline transition-colors">
-                    +94 7 630 06555
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <div className="p-4 rounded-xl transition-all duration-300 cursor-pointer hover:bg-white hover:bg-opacity-10">
-              <div className="flex items-start">
-                <div className="bg-violet-100 text-violet-800 w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-md">
-                  📍
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-xl font-semibold">Visit Us</h3>
-                  <p className="text-amber-100">
-                    12, 2nd Lane, Beddagana Road, Pitakotte, Sri Lanka
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-16">
-            <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300">
-                F
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300">
-                T
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300">
-                L
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300">
-                I
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Right side - Form */}
-      <div className="lg:w-7/12 p-8 lg:p-12">
-        <div>
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold text-gray-800">
-              Let's start with your details
-            </h3>
-            <p className="text-gray-600 mt-2">
-              We'll need this to get back to you
-            </p>
-          </div>
-          
-          {/* Progress indicator */}
-          <div className="mb-8">
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center bg-amber-500 text-white ring-4 ring-amber-100">
-                1
-              </div>
-              <div className="w-12 h-1 bg-gray-200"></div>
-              <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 text-gray-500">
-                2
-              </div>
-              <div className="w-12 h-1 bg-gray-200"></div>
-              <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 text-gray-500">
-                3
-              </div>
-            </div>
-          </div>
-          
-          <form>
-            <div className="space-y-6">
-              <div className="relative">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
-                  placeholder="Enter your full name"
-                />
-              </div>
-              
-              <div className="relative">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              
-              <div className="relative">
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                  Phone Number (Optional)
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
-                  placeholder="+1 (234) 567-8900"
-                />
-              </div>
-              
-              <div className="relative">
-                <label htmlFor="preference" className="block text-sm font-medium text-gray-700">
-                  I'm interested in
-                </label>
-                <select
-                  id="preference"
-                  name="preference"
-                  className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
-                >
-                  <option value="webinar">Attending a webinar</option>
-                  <option value="callback">Requesting a callback</option>
-                  <option value="info">More information</option>
-                </select>
-              </div>
-              
-              <div className="relative">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message (Optional)
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
-                  placeholder="Tell us more about what you're looking for..."
-                ></textarea>
-              </div>
-              
-              <div className="mt-8">
-                <button
-                  type="submit"
-                  className="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section> */}
     </div>
   );
 };
