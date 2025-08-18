@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, ChevronDown } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import headerImage from "../assets/cbg.jpg"; // Use your own image path
+import headerImage from "../assets/bg.jpg"; // Use your own image path
 
 const ContactPage = () => {
   const [name, setName] = useState("");
@@ -223,17 +223,15 @@ const ContactPage = () => {
       </div>
 
       {/* Leaflet Map */}
-      <div className="max-w-6xl mx-auto px-4 pb-16">
+      <div className="max-w-6xl mx-auto px-4 pb-16 ">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-green-800 mb-2">Find Us</h2>
           <div className="w-16 h-1 bg-yellow-400 mx-auto"></div>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow-lg">
+    <div className="bg-white p-4 rounded-lg shadow-lg z-10">
+          {/* Pass props via a single any-cast object to avoid TS typing mismatch */}
           <MapContainer
-            center={position}
-            zoom={15}
-            scrollWheelZoom={false}
-            className="w-full h-96 rounded-md"
+            {...({ center: position, zoom: 15, scrollWheelZoom: false, className: "w-full h-96 rounded-md" } as any)}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={position}>

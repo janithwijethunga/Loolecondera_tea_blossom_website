@@ -1,6 +1,8 @@
 
 import React from 'react';
 import HeroBanner from '../components/HomePage/HeroBanner';
+import historyBackground from '../assets/bg.jpg';
+
 
 const History = () => {
   const timelineEvents = [
@@ -20,7 +22,7 @@ const History = () => {
       description: "By the late 19th century, Ceylon tea had gained a reputation for its high quality and distinctive flavor."
     },
     {
-      year: "Early 1900s",
+      year: "1900s",
       title: "Industry Regulation",
       description: "The Ceylon Tea Traders Association was established to promote and regulate the industry."
     },
@@ -30,7 +32,7 @@ const History = () => {
       description: "After Sri Lanka's independence, the tea industry continued to grow as a primary export."
     },
     {
-      year: "Present Day",
+      year: "Present",
       title: "Global Recognition",
       description: "Today, Ceylon tea remains a symbol of Sri Lanka's rich history and tradition."
     }
@@ -41,7 +43,7 @@ const History = () => {
       <HeroBanner 
         title="Our History" 
         subtitle="The rich heritage of Ceylon tea"
-        backgroundImage="https://images.unsplash.com/photo-1518198606936-d92403c81c12?auto=format&fit=crop&q=80"
+        backgroundImage={historyBackground}
       />
       
       <section className="py-16 bg-white">
@@ -104,8 +106,8 @@ const History = () => {
                 >
                   <div className="flex-1"></div>
                   
-                  <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-tea-dark-green border-4 border-tea-cream z-10">
-                    <span className="text-white text-sm font-bold">{event.year}</span>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-20 h-20 rounded-full bg-tea-dark-green border-4 border-tea-cream z-10">
+                    <span className="text-white text-xs font-bold">{event.year}</span>
                   </div>
                   
                   <div className="flex-1">
