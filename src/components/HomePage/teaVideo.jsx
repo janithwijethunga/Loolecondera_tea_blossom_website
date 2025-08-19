@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import Background from "./../../assets/Homepage/bg4.jpg";
-import BG from "./../../assets/Homepage/bg3.jpg"
+
+import { images } from "./../../assets/assets.js";
+
+
+// import BG from "./../../assets/Homepage/bg3.webp"
 
 const TeaVideo = () => {
   const [playing, setPlaying] = useState(false);
@@ -18,7 +21,7 @@ const TeaVideo = () => {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-fixed bg-center bg-cover z-0"
-        style={{ backgroundImage: `url(${Background})` }}
+        style={{ backgroundImage: `url(${images.bg4})` }}
       ></div>
 
       {/* Overlay for better text visibility */}

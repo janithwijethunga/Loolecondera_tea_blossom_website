@@ -1,6 +1,8 @@
 import React from 'react';
-import Old1 from '../../assets/Homepage/old1.png';
-import Old2 from '../../assets/Homepage/old2.png';
+
+import { images } from '../../assets/assets';
+
+
 
 const History = () => {
   return (
@@ -33,7 +35,7 @@ const History = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-yellow-400 opacity-75 rounded-lg transform rotate-3 group-hover:rotate-1 transition-transform duration-300"></div>
               <div className="relative p-2 bg-white rounded-lg shadow-xl transform group-hover:translate-y-2 group-hover:translate-x-2 transition-transform duration-300">
                 <img 
-                  src={Old1} 
+                  src={images.old1} 
                   alt="Tea plantation in colonial Ceylon" 
                   className="rounded w-full h-auto object-cover" 
                 />
@@ -70,7 +72,7 @@ const History = () => {
           <div className="lg:col-span-4 flex flex-col gap-6">
             <div className="relative group overflow-hidden rounded-lg shadow-xl">
               <img 
-                src={Old2} 
+                src={images.old2} 
                 alt="Tea processing in colonial Ceylon" 
                 className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" 
               />

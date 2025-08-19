@@ -1,95 +1,27 @@
 import React, { useState } from "react";
 import { CheckCircle, Calendar, Users, Clock, Star } from "lucide-react";
-import tourhero from "../assets/Tours/hero.jpg";
-import sltour from "../assets/Tours/sltour.jpg";
-import chinatour from "../assets/Tours/chinatour.jpg";
-import slday1 from "../assets/Tours/slday1.jpg";
-import slday2 from "../assets/Tours/slday2.jpg";
-import slday3 from "../assets/Tours/slday3.jpg";
-import slday4 from "../assets/Tours/slday4.jpg";
-import slday5 from "../assets/Tours/slday5.jpg";
-import slday6 from "../assets/Tours/slday6.jpg";
-import slday7 from "../assets/Tours/slday7.jpg";
-import teafvisit from "../assets/Tours/teafvisit.jpg";
-import teastate from "../assets/Tours/teastate.jpg";
-import teatest from "../assets/Tours/teatest.jpg";
-import ceramony from "../assets/Tours/ceramony.jpg";
-import grd from "../assets/Tours/grd.jpg";
-import chday1 from "../assets/Tours/chday1.jpg";
-import chday2 from "../assets/Tours/chday2.jpg";
-import chday3 from "../assets/Tours/chday3.jpg";
-import chday4 from "../assets/Tours/chday4.jpg";
-import chday5 from "../assets/Tours/chday5.jpg";
-import chday6 from "../assets/Tours/chday6.jpg";
-import chday7 from "../assets/Tours/chday7.jpg";
-import chday8 from "../assets/Tours/chday8.jpg";
 
-import blacktea from "../assets/Homepage/CeylonBlackTea.png";
-import greentea from "../assets/Homepage/CeylonGreenTea.png";
-import oolongtea from "../assets/Homepage/CeylonOolongTea.png";
-import whitetea from "../assets/Homepage/CeylonWhiteTea.png";
-
+import { images } from "../assets/assets.js";
 const TeaTouringPage = () => {
   const [activeTab, setActiveTab] = useState("srilanka");
 
-  // Expanded image paths - in real implementation these would be imports
-  const images = {
-    hero: tourhero,
-    sriLanka: sltour,
-    china: chinatour,
-    teaServing: "/api/placeholder/600/400",
-    destinations: {
-      Negombo: slday1,
-      Kandy: slday2,
-      "Nuwara Eliya": slday3,
-      Ella: slday4,
-      Galle: slday5,
-      Colombo: slday6,
-      Beijing: "https://media.istockphoto.com/id/482334184/photo/night-on-beijing-central-business-district-buildings-skyline-china-cityscape.jpg?s=612x612&w=0&k=20&c=gd1nunX5dLfHTAyyqTE2frn4Iw-dzyr60YqJGaK2M4U=",
-      Shanghai: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg/960px-Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg",
-      Hangzhou: "https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2F2018_10_4_Blog-Header.jpg&w=3840&q=75",
-      Fujian: "https://cdn.britannica.com/13/123013-050-F3CDC5C6/Temple-Fuzhou-China.jpg",
-    },
-    // Added images for itinerary days
-    sriLankaItinerary: {
-      day1: slday1, // Negombo
-      day2: slday2, // Temple of the Tooth Relic
-      day3: slday3, // Tea Research Institute
-      day4: slday4, // Galle Fort
-      day5: slday5, // Turtle Hatchery
-      day6: slday6, // Tea Auction
-      day7: slday7, // Colombo
-    },
-    chinaItinerary: {
-      day1: chday1,
-      day2: chday2,
-      day3: chday3,
-      day4: chday4,
-      day5: chday5,
-      day6: chday6,
-      day7: chday7,
-      day8: chday8,
-    },
-    teaTypes: {
-      blackTea: blacktea,
-      greenTea: greentea,
-      oolongTea: oolongtea,
-      whiteTea: whitetea,
-    },
-    hotels: {
-      jetwingBlue: "/api/placeholder/300/200",
-      grandHotel: "/api/placeholder/300/200",
-      ellaHotel: "/api/placeholder/300/200",
-      hotelRiu: "/api/placeholder/300/200",
-      cinnamonGrand: "/api/placeholder/300/200",
-    },
-    attractions: {
-      teaFactory: teafvisit,
-      toothRelic: grd,
-      teaPlantation: teastate,
-      teaCeremony: ceramony,
-      teaTasting: teatest,
-    },
+  // Mapping destination names to available images
+  const destinationImages = {
+    "Negombo": images.slday1,
+    "Kandy": images.slday2,
+    "Nuwara Eliya": images.slday3,
+    "Ella": images.slday4,
+    "Galle": images.slday5,
+    "Colombo": images.slday6,
+    "Beijing": images.chday1,
+    "Shanghai": images.chday2,
+    "Hangzhou": images.chday3,
+    "Guangzhou": images.chday4,
+    "Xi'an": images.chday5,
+    "Chengdu": images.chday6,
+    "Guilin": images.chday7,
+    "Hong Kong": images.chday8,
+    "Fujian": images.chday4, // Fallback to existing China image
   };
 
   const tourDestinations = {
@@ -218,7 +150,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Dinner and overnight stay at Jetwing Blue.",
-      image: images.sriLankaItinerary.day1,
+      image: images.slday1,
       imageAlt: "Negombo Beach and Dutch Canal",
     },
     {
@@ -245,7 +177,7 @@ const TeaTouringPage = () => {
 
       accommodation:
         "Dinner and overnight stay at The Grand Hotel - Nuwara Eliya.",
-      image: images.sriLankaItinerary.day2,
+      image: images.slday2,
       imageAlt: "Temple of the Tooth Relic in Kandy",
     },
     {
@@ -271,7 +203,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Overnight stay at Ella.",
-      image: images.sriLankaItinerary.day3,
+      image: images.slday3,
       imageAlt: "Tea Research Institute in Talawakelle",
     },
     {
@@ -294,7 +226,7 @@ const TeaTouringPage = () => {
 
       accommodation:
         "Lunch, dinner, and overnight stay at Hotel Riu, Ahungalla. (Tourists can opt to take the Madu River boat tour upon personal request.)",
-      image: images.sriLankaItinerary.day4,
+      image: images.slday4,
       imageAlt: "Historic Galle Fort",
     },
     {
@@ -303,7 +235,7 @@ const TeaTouringPage = () => {
       description:
         "Breakfast at the Hotel Riu, visit to the turtle hatchery in Ahungalla and arrival back to the hotel for lunch. Visit to the Athukorala Tea Factory at Elpitiya where a lecture on tea will be conducted. Tourists will be awarded a certificate for participating in the tea tour.",
       accommodation: "Return back to Hotel Riu for dinner and overnight stay.",
-      image: images.sriLankaItinerary.day5,
+      image: images.slday5,
       imageAlt: "Turtle Hatchery in Ahungalla",
     },
     {
@@ -321,7 +253,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Dinner and overnight stay at Cinnamon Grand, Colombo.",
-      image: images.sriLankaItinerary.day6,
+      image: images.slday6,
       imageAlt: "Tea Auction at National Chamber of Commerce",
     },
     {
@@ -342,7 +274,7 @@ const TeaTouringPage = () => {
         </div>
       ),
       accommodation: "",
-      image: images.sriLankaItinerary.day7,
+      image: images.slday7,
       imageAlt: "Colombo City Skyline",
     },
   ];
@@ -367,7 +299,7 @@ const TeaTouringPage = () => {
         </p>
       ),
       accommodation: "Sofitel Hangzhou Westlake",
-      image: images.chinaItinerary.day1,
+      image: images.chday1,
       imageAlt: "Zhejiang University Campus",
     },
     {
@@ -460,7 +392,7 @@ const TeaTouringPage = () => {
         </div>
       ),
       accommodation: "Sofitel Hangzhou Westlake",
-      image: images.chinaItinerary.day2,
+      image: images.chday2,
       imageAlt: "Chinese Tea Varieties Display",
     },
     {
@@ -506,7 +438,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Tea Boutique Hotel West Lake, Hangzhou",
-      image: images.chinaItinerary.day3,
+      image: images.chday3,
       imageAlt: "Longjing Tea Gardens",
     },
     {
@@ -561,7 +493,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Tea Boutique Hotel West Lake, Hangzhou",
-      image: images.chinaItinerary.day4,
+      image: images.chday4,
       imageAlt: "Traditional Chinese Tea Ceremony",
     },
     {
@@ -607,7 +539,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Midtown Shangri-La Hangzhou",
-      image: images.chinaItinerary.day5,
+      image: images.chday5,
       imageAlt: "Historic Sites of Hangzhou – West Lake and Pagoda",
     },
     {
@@ -644,7 +576,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Anji Zhebei Hotel (Anji County Stay)",
-      image: images.chinaItinerary.day6,
+      image: images.chday6,
       imageAlt: "Anji White Tea Plantation Hills",
     },
     {
@@ -670,7 +602,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Pudong Shangri-La, East Shanghai",
-      image: images.chinaItinerary.day7,
+      image: images.chday7,
       imageAlt: "Shanghai Skyline and Tea Market Tour",
     },
     {
@@ -703,7 +635,7 @@ const TeaTouringPage = () => {
       ),
 
       accommodation: "Departure Day",
-      image: images.chinaItinerary.day8,
+      image: images.chday8,
       imageAlt: "Lecture Session and City Departure",
     },
   ];
@@ -739,27 +671,26 @@ const TeaTouringPage = () => {
       name: "Black Tea",
       description:
         "Fully oxidized tea with rich, robust flavors. Popular varieties include Keemun, Lapsang Souchong, and Dian Hong.",
-      image: images.teaTypes.blackTea,
+      image: images.CeylonBlackTea,
     },
     {
       name: "Green Tea",
       description:
         "Unoxidized tea with fresh, grassy notes. Famous types include Longjing (Dragon Well), Bi Luo Chun, and Gunpowder.",
-      image: images.teaTypes.greenTea,
+      image: images.CeylonGreenTea,
     },
     {
       name: "Oolong Tea",
       description:
         "Partially oxidized tea with complex flavors. Notable varieties are Tie Guan Yin, Da Hong Pao, and Dan Cong.",
-      image: images.teaTypes.oolongTea,
+      image: images.CeylonOolongTea,
     },
     {
       name: "White Tea",
       description:
         "Minimally processed tea with delicate sweetness. Silver Needle and White Peony are prized examples.",
-      image: images.teaTypes.whiteTea,
+      image: images.CeylonWhiteTea,
     },
- 
   ];
 
   return (
@@ -949,7 +880,7 @@ const TeaTouringPage = () => {
 
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
               <img
-                src={activeTab === "srilanka" ? images.sriLanka : images.china}
+                src={activeTab === "srilanka" ? images.sltour : images.chtour}
                 alt={
                   activeTab === "srilanka"
                     ? "Sri Lanka Tea Plantation"
@@ -1122,8 +1053,8 @@ const TeaTouringPage = () => {
                   <img
                     src={
                       activeTab === "srilanka"
-                        ? images.attractions.teaFactory
-                        : images.attractions.teaCeremony
+                        ? images.teavisit
+                        : images.ceramony
                     }
                     alt={
                       activeTab === "srilanka"
@@ -1149,7 +1080,7 @@ const TeaTouringPage = () => {
                 {/* Tea Plantation */}
                 <div className="bg-green-50 rounded-lg overflow-hidden shadow-md">
                   <img
-                    src={images.attractions.teaPlantation}
+                    src={images.teastate}
                     alt="Tea Plantation"
                     className="w-full h-48 object-cover"
                   />
@@ -1170,7 +1101,7 @@ const TeaTouringPage = () => {
                 {/* Tea Tasting */}
                 <div className="bg-amber-50 rounded-lg overflow-hidden shadow-md">
                   <img
-                    src={images.attractions.teaTasting}
+                    src={images.teatest}
                     alt="Tea Tasting"
                     className="w-full h-48 object-cover"
                   />
@@ -1210,7 +1141,7 @@ const TeaTouringPage = () => {
               >
                 <div className="h-56 relative overflow-hidden">
                   <img
-                    src={images.destinations[destination.name]}
+                    src={destinationImages[destination.name] || images.sltour}
                     alt={destination.name}
                     className="w-full h-full object-cover transition-transform duration-500 transform hover:scale-110"
                   />

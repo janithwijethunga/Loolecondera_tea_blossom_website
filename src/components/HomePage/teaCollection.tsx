@@ -2,14 +2,10 @@ import React from "react";
 import { Typography } from "antd";
 import { motion } from "framer-motion";
 
-import OP from "../../assets/Homepage/opImg.jpg";
-import BOP from "../../assets/Homepage/bopImg.jpg";
-import FBOP from "../../assets/Homepage/fbopImg.jpg";
-import FBOPEXTRA from "../../assets/Homepage/fbopSpecialImg.jpg";
-import PEKOE from "../../assets/Homepage/pekoeImg.jpg";
-import DUST from "../../assets/Homepage/dustImg.jpg";
-import SILVERTIPS from "../../assets/Homepage/silverImg.jpg";
-import GOLDENTIPS from "../../assets/Homepage/goldenImg.jpg";
+import { images } from "../../assets/assets"
+
+
+
 
 const { Title, Text } = Typography;
 
@@ -21,7 +17,7 @@ const TeaCollection = () => {
       price: "$1.20",
       description:
         "Orange Pekoe (OP) is one of the higher leaf grades in the tea classification system. It represents whole, unbroken tea leaves that are typically harvested from the top two leaves and a bud of the tea plant's new growth.",
-      imageUrl: OP,
+      imageUrl: images.opImg,
     },
     {
       id: 2,
@@ -29,7 +25,7 @@ const TeaCollection = () => {
       price: "$1.20",
       description:
         "Broken leaves in BOP grade tea can brew a stronger, more robust flavor compared to whole leaf teas. ",
-      imageUrl: BOP,
+      imageUrl: images.bopImg,
     },
     {
       id: 3,
@@ -37,7 +33,7 @@ const TeaCollection = () => {
       price: "$1.30",
       description:
         "The inclusion of young buds or tips adds complexity and a certain delicacy to the flavor profile. ",
-      imageUrl: FBOP,
+      imageUrl: images.fbopImg,
     },
     {
       id: 4,
@@ -45,7 +41,7 @@ const TeaCollection = () => {
       price: "$1.30",
       description:
         "(FBOP Special 1) is a specific tea grade that indicates a particular quality of tea leaves within the Flowery Broken Orange Pekoe (FBOP) category. The (Special 1) designation suggests that this grade is of higher quality compared to standard FBOP teas.",
-      imageUrl: FBOPEXTRA,
+      imageUrl: images.fbopSpecialImg,
     },
     {
       id: 5,
@@ -53,7 +49,7 @@ const TeaCollection = () => {
       price: "$1.30",
       description:
         "Pekoe grade tea leaves are known for producing a milder and more delicate cup of tea compared to coarser leaves. ",
-      imageUrl: PEKOE,
+      imageUrl: images.pekoeImg,
     },
     {
       id: 6,
@@ -61,7 +57,7 @@ const TeaCollection = () => {
       price: "$1.20",
       description:
         "Because of the small particle size, Dust 1 tea brews quickly and produces a strong, robust cup of tea.",
-      imageUrl: DUST,
+      imageUrl: images.dustImg,
     },
     {
       id: 7,
@@ -69,7 +65,7 @@ const TeaCollection = () => {
       price: "$1.30",
       description:
         "The delicate buds are minimally processed, usually just withering and drying, to preserve their natural characteristics. The flavor is light, subtle, and often described as floral and slightly sweet.",
-      imageUrl: SILVERTIPS,
+      imageUrl: images.silverImg,
     },
     {
       id: 8,
@@ -77,7 +73,7 @@ const TeaCollection = () => {
       price: "$1.30",
       description:
         "Golden Tips tea is renowned for its exquisite flavor and aroma. The buds are carefully plucked during specific harvesting periods to ensure their quality. ",
-      imageUrl: GOLDENTIPS,
+      imageUrl: images.goldenImg,
     },
   ];
 

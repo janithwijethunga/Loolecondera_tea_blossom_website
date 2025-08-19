@@ -1,5 +1,6 @@
 import React from "react";
-import TeaLeaves from "../../assets/Homepage/green-tea-bud-leaves-green-tea-plantations-morning_1x.jpg";
+
+import { images } from "../../assets/assets.js";
 
 // Functional component with proper type annotation
 const CeylonTea: React.FC = () => {
@@ -8,7 +9,7 @@ const CeylonTea: React.FC = () => {
       <div className="bg-fixed bg-cover bg-center">
         {/* Background Image */}
         <img
-          src={TeaLeaves}
+          src={images.greenteabudleavesgreenteaplantationsmorning_1x}
           alt="Ceylon Tea"
           className="absolute inset-0 object-cover w-full h-full"
         />

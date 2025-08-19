@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import tea1 from "../assets/investintea/tea1.jpg";
-import tea2 from "../assets/investintea/tea2.jpg";
-import tea3 from "../assets/investintea/tea3.jpg";
-import teavilla from "../assets/investintea/teavilla.jpg";
+
+import { images } from "../assets/assets";
+
 
 const MinimalistTeaVilla = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -35,21 +34,21 @@ const MinimalistTeaVilla = () => {
       title: "Idyllic Paradise",
       description:
         "A flourishing tea garden surrounding the premises offers premium-quality tea, directly sourced and brewed for your pleasure.",
-      image: tea1,
+      image: images.tea1,
     },
     {
       id: 2,
       title: "Premium Tea Experience",
       description:
         "An idyllic view of hidden paradise in Pelmadulla offering maximum comfort and scenic bliss for your stay.",
-      image: tea3,
+      image: images.tea3,
     },
     {
       id: 3,
       title: "Luxury Getaway",
       description:
         "Features a luxury pool facing the spectacular Kudaella Falls, curated for a unique getaway and tea drinking experience.",
-      image: tea2,
+      image: images.tea2,
     },
   ];
 
@@ -66,7 +65,7 @@ const MinimalistTeaVilla = () => {
             {/* City skyline image */}
             <div className="w-full mb-4">
               <img
-                src={teavilla}
+                src={images.teavilla}
                 alt="Tea Villa"
                 className="w-full h-auto object-cover rounded-lg shadow-lg"
               />

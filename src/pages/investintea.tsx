@@ -10,15 +10,10 @@ import {
   FaGlobeAsia,
   FaHome,
 } from "react-icons/fa";
-import heroo from "../assets/investintea/hero.jpg";
-import img1 from "../assets/investintea/img1.jpg";
-import img2 from "../assets/investintea/img2.jpg";
-import img3 from "../assets/investintea/img3.jpg";
-import img4 from "../assets/investintea/img4.jpg";
+
+import { images } from "../assets/assets";
+
 import Teavilla from "../components/teavilla";
-import villas from "../assets/investintea/villas.jpg";
-import surroundings from "../assets/investintea/surroundings.jpg";
-import garden from "../assets/investintea/garden.jpg";
 
 interface StepProps {
   number: string;
@@ -181,7 +176,7 @@ const InvestInTeaPage: React.FC = () => {
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center h-screen"
-        style={{ backgroundImage: `url(${heroo})` }}
+        style={{ backgroundImage: `url(${images.hero})` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
@@ -294,7 +289,7 @@ const InvestInTeaPage: React.FC = () => {
               title="Purchase a Bulk of Tea Trees"
               description="You can purchase tea trees in 100 trees bulk sets. The minimum amount is 1 set or 100 trees."
               icon={<FaLeaf className="text-xl" />}
-              image={img1}
+              image={images.img1}
             />
 
             <InvestmentStep
@@ -302,7 +297,7 @@ const InvestInTeaPage: React.FC = () => {
               title="Taste Tea From Your Garden"
               description="After you make the first investment, you will have 500g of Premium Ceylon tea per month for a continuous 20-year period. You will receive your collected harvest every three months. It will be delivered to your doorstep without a shipping or transport fee. (Annually you will get 6kg of pure Ceylon tea from your own garden.)"
               icon={<FaMugHot className="text-xl" />}
-              image={img2}
+              image={images.img2}
             />
 
             <InvestmentStep
@@ -310,7 +305,7 @@ const InvestInTeaPage: React.FC = () => {
               title="Take a Vacation in Your Tea Garden"
               description="You are entitled to visit your tea garden at any time you wish and you can spend a vacation in our Tea Bungalow. We will arrange a special tea tour in our tea garden where you can tend to and puck tea from your garden and a tour to a tea factory. "
               icon={<FaHome className="text-xl" />}
-              image={img3}
+              image={images.img3}
             />
 
             <InvestmentStep
@@ -318,7 +313,7 @@ const InvestInTeaPage: React.FC = () => {
               title="Explore the beauty of the golden land, Sri Lanka"
               description="You can maximize your visit to Sri Lanka with us. A completed tour with exploring tea gardens, tea factories, and research centers, to mesmerizing relics and sea sides."
               icon={<FaGlobeAsia className="text-xl" />}
-              image={img4}
+              image={images.img4}
             />
           </div>
 
@@ -342,17 +337,17 @@ const InvestInTeaPage: React.FC = () => {
             <VillaFeature
               title="Villas"
               description="The gorgeous Subha Tea Villa offers an idyllic Pelmadulla escape with maximum comfort and scenic bliss."
-              image={villas}
+              image={images.villas}
             />
             <VillaFeature
               title="Surrounding"
               description="Features a luxury pool overlooking the spectacular Kudaella Falls for a unique tea-drinking getaway."
-              image={surroundings}
+              image={images.surroundings}
             />
             <VillaFeature
               title="Tea Garden"
               description="The villa's surrounding flourishing tea garden supplies leaves directly sourced, processed, and brewed for your cup."
-              image={garden}
+              image={images.garden}
             />
           </div>
         </div>

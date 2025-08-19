@@ -1,7 +1,9 @@
 import React from "react";
-import Background from "../../assets/Homepage/bg1.jpg";
-import Img1 from "../../assets/Homepage/bestProvider.png";
-import Img2 from "../../assets/Homepage/ceylonTea.png";
+
+import {images} from "../../assets/assets.js";
+
+
+
 import {
   CoffeeOutlined,
   SafetyCertificateOutlined,
@@ -67,18 +69,18 @@ const Specialties = () => {
   return (
     <div
       className="bg-fixed bg-center bg-cover py-20"
-      style={{ backgroundImage: `url(${Background})` }}
+      style={{ backgroundImage: `url(${images.bg1})` }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 max-w-7xl mx-auto items-center">
         {/* Left Side - Images */}
         <div className="flex flex-col items-center justify-center space-y-10">
           <img
-            src={Img1}
+            src={images.bestProvider}
             alt="Specialties1"
             className="w-72 lg:w-96 hover:scale-105 transition"
           />
           <img
-            src={Img2}
+            src={images.ceylonTea}
             alt="Specialties2"
             className="w-52 lg:w-60 hover:scale-105 transition"
           />

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Logo from "../assets/Ceylon_Tea_-_looleconera_v_1x.png";
+import Logo from "../assets/Ceylon_Tea_-_looleconera_v_1x.webp";
+
+import { images } from '../assets/assets';
 
 interface SplashScreenProps {
   onFinish: () => void;
@@ -39,7 +41,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
           className="relative"
         >
           <img
-            src={Logo}
+            src={images.logoTea}
             alt="Logo"
             className="w-[320px] h-[140px] object-contain drop-shadow-lg"
           />
