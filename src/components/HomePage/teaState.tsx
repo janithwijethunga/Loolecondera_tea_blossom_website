@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
-import BackgroundImg from "../../assets/Homepage/bg2.jpg";
-import Img from "../../assets/Homepage/old3.png";
+
+import { images } from "../../assets/assets.js";
+
+
 
 const LoolkanduraTeaEstate = () => {
   // Subtle scroll animation effect
@@ -29,7 +31,7 @@ const LoolkanduraTeaEstate = () => {
       {/* Background with parallax effect */}
       <div
         className="absolute inset-0 bg-fixed bg-center bg-cover z-0"
-        style={{ backgroundImage: `url(${BackgroundImg})` }}
+        style={{ backgroundImage: `url(${images.bg2})` }}
       />
 
       <div className="container mx-auto px-4 pt-16  pb-12 relative z-10">
@@ -77,7 +79,7 @@ const LoolkanduraTeaEstate = () => {
             style={{ animationDelay: "0.6s" }}
           >
             <img
-              src={Img}
+              src={images.old3}
               alt="Historical image of Loolkandura Tea Estate"
               className="w-full h-auto rounded-lg transition-all duration-300 transform hover:scale-105"
             />

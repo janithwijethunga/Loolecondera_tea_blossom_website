@@ -1,16 +1,11 @@
 import React from "react";
+
+import { images } from "../assets/assets"
+
 import HeroBanner from "../components/HomePage/HeroBanner";
 import TeaCard from "../components/HomePage/TeaCard";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import heroBannerImage from "../assets/Homepage/Hero cover_1x.jpg";
-import Banner2 from "../assets//Homepage/red banner_1x.jpg";
-import Banner3 from "../assets/Homepage/tea-plantations-green-mountain-fields-wallpaper-preview_1x.jpg";
-import BG from "../assets/Homepage/bg3.jpg"
-import CeylonBlackTea from "../assets/Homepage/CeylonBlackTea.png";
-import CeylonGreenTea from "../assets/Homepage/CeylonGreenTea.png";
-import CeylonOolongTea from "../assets/Homepage/CeylonOolongTea.png";
-import CeylonWhiteTea from "../assets/Homepage/CeylonWhiteTea.png";
 import CeylonTea from "../components/HomePage/ceylonTea";
 import Specialist from "../components/HomePage/specialties";
 import History from "../components/HomePage/history";
@@ -18,7 +13,6 @@ import TeaState from "../components/HomePage/teaState";
 import WorldWide from "../components/HomePage/wordwide";
 import TeaCollection from "../components/HomePage/teaCollection";
 import TeaVideo from "../components/HomePage/teaVideo";
-import OldImg from "../assets/Homepage/oldbuilding.png"
 
 
 
@@ -29,44 +23,43 @@ const Index = () => {
       title: "Ceylon Black Tea",
       description:
         "Black tea is the most common variety of Ceylon tea and is known for its bold, full-bodied flavor and rich aroma. It is typically served hot and can be enjoyed plain or with milk and sugar.",
-      image: CeylonBlackTea,
+      image: images.CeylonBlackTea,
       link: "/products",
     },
     {
       title: "Ceylon Green Tea",
       description:
         "Green tea is a lighter, milder variety of Ceylon tea that is known for its delicate, vegetal flavor and subtle aroma. It is typically served hot and can be enjoyed plain or with a squeeze of lemon.",
-      image: CeylonGreenTea,
+      image: images.CeylonGreenTea,
       link: "/products",
     },
     {
       title: "Ceylon Oolong Tea",
       description:
         "Oolong tea is often prized for its complex and nuanced taste. It can have floral, fruity, and even nutty notes, depending on the specific variety and processing methods. The flavor profile can range from light and delicate to rich and robust.",
-      image: CeylonOolongTea,
+      image: images.CeylonOolongTea,
       link: "/products",
     },
     {
       title: "Ceylon White Tea",
       description:
         "White tea is a rare and delicate variety of Ceylon tea that is made from the youngest tea leaves and buds. It is known for its light, sweet flavor and floral aroma and is typically served hot.",
-      image: CeylonWhiteTea,
+      image: images.CeylonWhiteTea,
       link: "/products",
     },
   ];
 
   return (
     <div>
-      <HeroBanner backgroundImage={heroBannerImage} />
+      <HeroBanner backgroundImage={images.Herocover_1x} />
 
       <div>
-        <img src={Banner2} alt="Hero Banner" className="w-full object-cover" />
+        <img src={images.redbanner_1x} alt="Hero Banner" className="w-full object-cover" />
       </div>
-
       {/* Premium Tea Section with Banner 3 Background */}
       <section className="relative overflow-hidden">
         <img
-          src={Banner3}
+          src={images.teaplantationsgreenmountainfieldswallpaperpreview_1x}
           alt="Hero Banner"
           className="absolute w-full h-full object-cover scale-105"
         />
@@ -124,7 +117,7 @@ const Index = () => {
       {/* Background Image */}
       <div>
         <img
-          src={BG}
+          src={images.bg3}
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover "
         />
@@ -174,7 +167,7 @@ const Index = () => {
               style={{ animationDelay: "0.2s" }}
             >
               <img
-                src={OldImg}
+                src={images.oldbuilding}
                 alt="Tea plantation"
                 className="w-full h-full object-cover"
               />

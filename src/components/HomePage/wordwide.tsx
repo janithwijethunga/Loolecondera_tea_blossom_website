@@ -1,5 +1,6 @@
 import React from "react";
-import Lion from "../../assets/Homepage/greenlion.png";
+
+import { images } from "../../assets/assets.js";
 
 const Worldwide = () => {
   return (
@@ -98,7 +99,7 @@ const Worldwide = () => {
                 <div className="relative z-10 bg-green-600 rounded-full p-4 shadow-xl transform transition-transform duration-500 hover:scale-105">
                   <div className="w-56 h-56 relative rounded-full overflow-hidden border-4 border-white">
                     <img
-                      src={Lion}
+                      src={images.greenlion}
                       alt="Green Lion Logo"
                       className="w-full h-full object-cover pt-1 pr-"
                     />

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import HeroBanner from '../components/HomePage/HeroBanner';
-import historyBackground from '../assets/bg.jpg';
+import historyBackground from '../assets/bg.webp';
 
 
 const History = () => {

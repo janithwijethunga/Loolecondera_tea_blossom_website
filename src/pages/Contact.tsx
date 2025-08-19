@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, ChevronDown } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import headerImage from "../assets/bg.jpg"; // Use your own image path
+import headerImage from "../assets/bg.webp"; // Use your own image path
 
 const ContactPage = () => {
   const [name, setName] = useState("");

@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import Logo from '../assets/Ceylon_Tea_-_looleconera_v_1x.png'; 
+
+import { images } from '../assets/assets';
 
 
 const Navbar = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
       <div className="tea-container">
         <nav className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center">
-            <img src={Logo} alt="Tea Logo" className="h-10 w-auto" />
+            <img src={images.logoTea} alt="Tea Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
