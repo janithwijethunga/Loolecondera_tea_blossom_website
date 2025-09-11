@@ -3,6 +3,7 @@ import React from "react";
 import { images } from "../assets/assets"
 
 import HeroBanner from "../components/HomePage/HeroBanner";
+import { useIsMobile } from "../hooks/use-mobile";
 import TeaCard from "../components/HomePage/TeaCard";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -13,6 +14,7 @@ import TeaState from "../components/HomePage/teaState";
 import WorldWide from "../components/HomePage/wordwide";
 import TeaCollection from "../components/HomePage/teaCollection";
 import TeaVideo from "../components/HomePage/teaVideo";
+import imag from "../assets/bannerPC.png"
 
 
 
@@ -49,9 +51,13 @@ const Index = () => {
     },
   ];
 
+  const isMobile = useIsMobile();
+  const heroImage = isMobile ? images.Herocover_mobile : images.bannerPC;
+
   return (
-    <div>
-      <HeroBanner backgroundImage={images.Herocover_1x} />
+    <div  className="">
+
+      <img src={imag} alt="" />
 
       <div>
         <img src={images.redbanner_1x} alt="Hero Banner" className="w-full object-cover" />
