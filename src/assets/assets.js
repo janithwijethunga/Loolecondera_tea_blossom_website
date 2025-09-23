@@ -72,37 +72,47 @@ export const images = {
 
   //Products Images
   premium1:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2Fpremium1.webp?alt=media&token=a05d36ad-fc7f-4cb6-aa04-aa8f6c615d45",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FRed.webp?alt=media&token=2f6fde2e-d363-43be-afff-026291f7cd02",
   premium2:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2Fpremium2.webp?alt=media&token=40e510e3-8290-4f0e-beab-7ad7e094fce3",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FGemini_Generated_Image_1okvq61okvq61okv.webp?alt=media&token=4075b803-1ba4-4bb5-8f22-de66a152a0db",
   premium3:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2Fpremium3.webp?alt=media&token=0faa3828-e048-466e-9edc-1400b27fb39e",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FGemini_Generated_Image_fxa2xsfxa2xsfxa2.webp?alt=media&token=a8ba4b12-e5e3-4308-bd1f-002864277223",
   premium4:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2Fpremium4.webp?alt=media&token=c039173f-bd0a-430b-acee-5b291fa53cf2",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FGemini_Generated_Image_fjxwqwfjxwqwfjxw.webp?alt=media&token=a740483d-ba52-45e0-85c8-5adabc5b4fb9",
   premium5:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2Fpremium5.webp?alt=media&token=11452283-94c8-4daf-b350-28e7b9ef85f5",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FGemini_Generated_Image_7hjw4h7hjw4h7hjw.webp?alt=media&token=698dff01-0ede-4712-90db-46a404f6ecc3",
+  premium6:
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FGemini_Generated_Image_ff8i51ff8i51ff8i.webp?alt=media&token=7e3cda40-4862-44ef-abf9-0558cf4aead9",
+  premium7:
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FGemini_Generated_Image_30j01h30j01h30j0.webp?alt=media&token=fee7de47-5705-4ac0-a8b9-6f1792873f81",
+  premium8:
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FGemini_Generated_Image_eplkg9eplkg9eplk.webp?alt=media&token=296e6d76-2e01-4fca-ab91-2fdbe5b98e9f",
   Product1:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct1.webp?alt=media&token=36ba51e7-99d6-4876-a041-c33060edd502",
   Product2:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct2.webp?alt=media&token=e5da4839-899c-43ec-9c03-d87795274ecd",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FCTC%20Tea.jpeg.webp?alt=media&token=28bdc893-9946-4195-804a-338fcb79a70c",
   Product3:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct3.webp?alt=media&token=5f88b574-22f3-42c0-bd0e-fe7c2e7dab6a",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FTea%20Culture%20Black%20Leaves%2C%20Tea%20Culture%20Black%20Tea%2C%20Tea%20Culture%2C%20Tea%20Leaves%20PNG%20Transparent%20Image%20and%20Clipart%20for%20Free%20Download.jpeg?alt=media&token=7a5229c4-ca4f-490d-8565-0f4d610d3d40",
   Product4:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct4.webp?alt=media&token=80027e6a-dc91-4189-9012-6958c1db6596",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FDUST1%20Tea.jpeg.webp?alt=media&token=105e76a2-5d7e-4ae9-bed0-2557ca8a6ea1",
   Product5:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct5.webp?alt=media&token=2f0c3e91-ca44-4f12-85e1-0035e4fec778",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FBOPF%20Tea.jpeg.webp?alt=media&token=bb568595-d24b-4112-869c-8e6fc46670b2",
   Product6:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct6.webp?alt=media&token=6e7b1b82-9360-4ec1-980a-da84bb590899",
   Product7:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct7.webp?alt=media&token=d4712e6d-743d-4a0d-a306-620daf2caf08",
   Product8:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct8.webp?alt=media&token=0816a84b-a20c-4c0b-a65c-2562a26f9cef",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FOPA%20Tea.jpeg.webp?alt=media&token=9398dfd8-26ac-451c-be89-b9916fcedcbf",
   Product9:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct9.webp?alt=media&token=e7b6dcd6-3064-4bd0-9459-4fb47b976d07",
   Product10:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct10.webp?alt=media&token=a4e52d24-3c4f-4dc7-b018-2bb2a01a9342",
   Product11:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProduct11.webp?alt=media&token=76e0af24-09e6-4b4f-9b8a-1c3504828441",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FPekoe%20Tea.jpeg.webp?alt=media&token=7a971e19-fc7b-4847-ae12-958a09546730",
+  product12:
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FFBOP.jpg?alt=media&token=ddf95e41-48a6-4891-a93c-8c5cd5ec4153",
+  product13:
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FWhole%20leafe.jpg?alt=media&token=77b0b216-d157-4978-862f-f317c8e7d565",
   ProductsHero:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProductsHero.webp?alt=media&token=db47eea5-4b93-4e1c-a04d-54b7db65d550",
 
