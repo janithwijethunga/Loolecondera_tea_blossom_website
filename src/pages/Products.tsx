@@ -153,15 +153,9 @@ const Products = () => {
   return (
     <div className="bg-gradient-to-b from-green-50 to-amber-50 min-h-screen">
       {/* Hero Banner */}
-      <div className="relative h-80 overflow-hidden">
-        <img src={images.ProductsHero} alt="Tea Products" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold text-white mb-4">Loolecondera Tea Collections</h1>
-            <p className="text-xl text-white text-opacity-90">Experience the finest teas from the heart of Sri Lanka</p>
-          </div>
-        </div>
+      <div className="relative h-80 overflow-hidden mt-5">
+        <img src={images.ProductsHero1} alt="Tea Products" className="h-full object-center mx-auto" />
+        
       </div>
 
       {/* Collection Tabs */}
