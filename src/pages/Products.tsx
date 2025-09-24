@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BsStars } from 'react-icons/bs';
 import { images } from '../assets/assets';
 
-// --- Updated Skeleton Components ---
-
 const HeroBannerSkeleton = () => (
-  // The parent needs to be relative and overflow-hidden to contain the shimmer
   <div className="relative h-80 overflow-hidden mt-5 bg-gray-200 w-4/6 mx-auto rounded-2xl">
     {/* The Shimmer Effect Div */}
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/100 to-transparent -translate-x-full animate-shimmer" />
@@ -26,7 +23,6 @@ const ProductCardSkeleton = ({ isPremium = false }) => (
         <div className="h-6 bg-gray-200 rounded w-24" />
       </div>
     </div>
-    {/* The Shimmer Effect Div - it covers the whole card */}
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full animate-shimmer" />
   </div>
 );
