@@ -1,9 +1,37 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroBanner from '../components/HomePage/HeroBanner';
 import { CheckCircle } from 'lucide-react';
+import { images } from '../assets/assets';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Specialties = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      once: true,
+      offset: 100
+    });
+
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Refresh AOS when loading state changes
+  useEffect(() => {
+    if (!isLoading) {
+      AOS.refresh();
+    }
+  }, [isLoading]);
+
   const specialties = [
     {
       title: "Bright and Flavorful",
@@ -32,17 +60,108 @@ const Specialties = () => {
     }
   ];
 
+  // Skeleton components
+  const SkeletonCard = () => (
+    <div className="tea-card p-8 animate-pulse">
+      <div className="mb-4 w-8 h-8 bg-gray-300 rounded-full shimmer"></div>
+      <div className="h-6 bg-gray-300 rounded mb-3 shimmer"></div>
+      <div className="space-y-2">
+        <div className="h-4 bg-gray-300 rounded shimmer"></div>
+        <div className="h-4 bg-gray-300 rounded shimmer"></div>
+        <div className="h-4 bg-gray-300 rounded w-3/4 shimmer"></div>
+      </div>
+    </div>
+  );
+
+  const SkeletonSection = () => (
+    <div className="animate-pulse">
+      <div className="h-8 bg-gray-300 rounded mb-6 shimmer"></div>
+      <div className="space-y-4">
+        <div className="h-4 bg-gray-300 rounded shimmer"></div>
+        <div className="h-4 bg-gray-300 rounded shimmer"></div>
+        <div className="h-4 bg-gray-300 rounded w-2/3 shimmer"></div>
+      </div>
+    </div>
+  );
+
+  const SkeletonImageGrid = () => (
+    <div className="grid grid-cols-2 gap-4 animate-pulse">
+      {[...Array(4)].map((_, index) => (
+        <div key={index} className="bg-gray-300 rounded-lg h-48 shimmer"></div>
+      ))}
+    </div>
+  );
+
+  if (isLoading) {
+    return (
+      <div>
+        {/* Hero Banner Skeleton */}
+        <div className="relative h-[420px] flex items-center justify-center overflow-hidden">
+          <div className="w-full max-w-5xl h-96 md:h-[400px] bg-gray-300 rounded-3xl shimmer animate-pulse"></div>
+        </div>
+        
+        {/* Main Content Skeleton */}
+        <section className="py-16 bg-white">
+          <div className="tea-container">
+            <div className="max-w-3xl mx-auto text-center mb-12 animate-pulse">
+              <div className="h-10 bg-gray-300 rounded mb-6 shimmer"></div>
+              <div className="space-y-2">
+                <div className="h-4 bg-gray-300 rounded shimmer"></div>
+                <div className="h-4 bg-gray-300 rounded shimmer"></div>
+                <div className="h-4 bg-gray-300 rounded w-3/4 mx-auto shimmer"></div>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[...Array(5)].map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Second Section Skeleton */}
+        <section className="py-16 bg-gray-800">
+          <div className="tea-container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <SkeletonSection />
+              <SkeletonImageGrid />
+            </div>
+          </div>
+        </section>
+        
+        {/* Third Section Skeleton */}
+        <section className="py-16 bg-gray-100">
+          <div className="tea-container text-center">
+            <div className="animate-pulse mb-12">
+              <div className="h-10 bg-gray-300 rounded mb-6 shimmer mx-auto w-1/2"></div>
+              <div className="space-y-2 max-w-3xl mx-auto">
+                <div className="h-4 bg-gray-300 rounded shimmer"></div>
+                <div className="h-4 bg-gray-300 rounded shimmer"></div>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[...Array(3)].map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div>
       <HeroBanner 
-        title="Our Specialties" 
-        subtitle="What makes Ceylon tea exceptional"
-        backgroundImage="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&q=80"
+        backgroundImage={images.specialtiesBanner}
       />
       
+      {/* What Makes Us Special Section - WITH AOS */}
       <section className="py-16 bg-white">
         <div className="tea-container">
-          <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
             <h2 className="section-title inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2">
               What Makes Us Special
             </h2>
@@ -55,8 +174,9 @@ const Specialties = () => {
             {specialties.map((specialty, index) => (
               <div 
                 key={specialty.title} 
-                className="tea-card p-8 animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="tea-card p-8"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="mb-4">{specialty.icon}</div>
                 <h3 className="text-xl font-bold text-tea-dark-green mb-3">{specialty.title}</h3>
@@ -67,10 +187,11 @@ const Specialties = () => {
         </div>
       </section>
       
+      {/* The Ceylon Difference Section - WITH AOS */}
       <section className="py-16 bg-tea-dark-green text-white">
         <div className="tea-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-up">
+            <div data-aos="fade-right">
               <h2 className="section-title text-white after:bg-tea-gold">
                 The Ceylon Difference
               </h2>
@@ -85,31 +206,31 @@ const Specialties = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <div className="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-delay="200">
               <div className="rounded-lg overflow-hidden h-48">
                 <img 
-                  src="https://images.unsplash.com/photo-1563911892437-1feda0179e1b?auto=format&fit=crop&q=80" 
+                  src="https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fspecialties%2FJuan%20valdez%20on%20Behance.jpeg?alt=media&token=ae5e968a-fbd4-4615-b963-7659dbf2c60a" 
                   alt="Tea plantation" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden h-48">
                 <img 
-                  src="https://images.unsplash.com/photo-1549737221-bef65e2604a6?auto=format&fit=crop&q=80" 
+                  src="https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fspecialties%2FThe%20Beauty%20of%20Sepon%20Welcome%20to%20the%20serene%20beauty%20of%20Sepon%20Tea%20Estate%2C%20nestled%20between%20the%20lush%20landscapes%20of%20Sibsagar%20and%20Dibrugarh%20districts%20in%20Assam_%20As%20a%20proud%20part%20of%20the%20renowned%20Moran%20tea%20estates%2C%20Sepon%20is%20a%20gem%20th.jpeg?alt=media&token=174616fb-a01b-42a1-81a2-e4a6ce31e46e" 
                   alt="Tea leaves" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden h-48">
                 <img 
-                  src="https://images.unsplash.com/photo-1551610290-e153ec567dd8?auto=format&fit=crop&q=80" 
+                  src="https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fspecialties%2FHands%20Holding%20a%20Warm%20Mug%20of%20Herbal%20Tea%20in%20Autumn__.jpeg?alt=media&token=95a41017-4202-4801-a3b7-bdbdf8b653c5" 
                   alt="Tea processing" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden h-48">
                 <img 
-                  src="https://images.unsplash.com/photo-1515696955266-4f67e13219e8?auto=format&fit=crop&q=80" 
+                  src="https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fspecialties%2FSmooth%20Move%20Tea_%20Everything%20You%20Need%20to%20Know.jpeg?alt=media&token=8a750947-a4b0-44ec-8e6b-53bdb188d96e" 
                   alt="Tea cup" 
                   className="w-full h-full object-cover"
                 />
@@ -119,31 +240,46 @@ const Specialties = () => {
         </div>
       </section>
       
+      {/* Tea Terroirs of Sri Lanka Section - WITH AOS */}
       <section className="py-16 bg-tea-cream">
         <div className="tea-container text-center">
-          <h2 className="section-title inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2">
-            Tea Terroirs of Sri Lanka
-          </h2>
-          <p className="max-w-3xl mx-auto text-lg mb-12 text-gray-700">
-            Sri Lanka's diverse growing regions, each with its unique climate and soil conditions, produce teas with distinctive characteristics.
-          </p>
+          <div data-aos="fade-up">
+            <h2 className="section-title inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2">
+              Tea Terroirs of Sri Lanka
+            </h2>
+            <p className="max-w-3xl mx-auto text-lg mb-12 text-gray-700">
+              Sri Lanka's diverse growing regions, each with its unique climate and soil conditions, produce teas with distinctive characteristics.
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="tea-card p-8 animate-fade-up">
+            <div 
+              className="tea-card p-8" 
+              data-aos="fade-up" 
+              data-aos-delay="0"
+            >
               <h3 className="text-xl font-bold text-tea-dark-green mb-3">Nuwara Eliya</h3>
               <p className="text-gray-700">
                 High altitude region producing delicate, light-bodied teas with floral notes and a bright, brisk character.
               </p>
             </div>
             
-            <div className="tea-card p-8 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <div 
+              className="tea-card p-8" 
+              data-aos="fade-up" 
+              data-aos-delay="100"
+            >
               <h3 className="text-xl font-bold text-tea-dark-green mb-3">Dimbula</h3>
               <p className="text-gray-700">
                 Full-bodied teas with a rounded flavor, hints of citrus, and a refreshing character.
               </p>
             </div>
             
-            <div className="tea-card p-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <div 
+              className="tea-card p-8" 
+              data-aos="fade-up" 
+              data-aos-delay="200"
+            >
               <h3 className="text-xl font-bold text-tea-dark-green mb-3">Uva</h3>
               <p className="text-gray-700">
                 Distinguished by a unique mellowness and pungent flavor, with notes of honey and a rich aroma.

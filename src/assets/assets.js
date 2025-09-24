@@ -32,7 +32,7 @@ export const images = {
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FHomepage%2Fgreen-tea-bud-leaves-green-tea-plantations-morning_1x.webp?alt=media&token=3d069cf0-e82b-45bb-86ec-942a300c065e",
   Herocover_1x:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FHomepage%2FHero%20cover_1x.webp?alt=media&token=acd4c0ec-f1ab-4f48-a500-f7113d229248",
-  bannerPC: "/src/assets/bannerPC.png",
+  bannerPC: "/src/assets/bannerPC.pn",
   old1: "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FHomepage%2Fold1.webp?alt=media&token=57e80d2d-b38c-4b86-ac82-246ad295c9be",
   old2: "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FHomepage%2Fold2.webp?alt=media&token=4b67cf9e-fb1e-4251-87a3-0f3e010b7eef",
   old3: "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FHomepage%2Fold3.webp?alt=media&token=0bb987bc-987f-4738-954e-f174b66ed431",
@@ -169,4 +169,7 @@ export const images = {
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fchtour.webp?alt=media&token=a7710063-b58d-48e9-aa54-355adf222283",
   logoTea:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Flogo.png?alt=media&token=467157ac-59ed-4c2b-a30b-2e2f02ad8bb7",
+
+  specialtiesBanner:
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FSpecialties_Banner2.png?alt=media&token=9271a3ea-d229-446e-bda0-149e4a1011c1",
 };
