@@ -116,7 +116,7 @@ export const images = {
   ProductsHero:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FProductsHero.webp?alt=media&token=db47eea5-4b93-4e1c-a04d-54b7db65d550",
   ProductsHero1:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FTea_Banner.png?alt=media&token=afda2df3-8990-42b4-87bb-cf82ae1d6e2f",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Fproducts%2FClassic%20Collection%2FTea_Banner3.png?alt=media&token=d951b3e2-8cac-437c-be85-f2962da82f00",
 
   //tours images
   ceramony:
