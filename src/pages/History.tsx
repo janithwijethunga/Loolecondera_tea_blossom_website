@@ -48,7 +48,7 @@ const History = () => {
       
       <section className="py-16 bg-white">
         <div className="tea-container">
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-5xl mx-auto mb-12">
             <h2 className="section-title">The Legacy of Loolecondera</h2>
             <p className="text-lg text-gray-700 mb-6">
               The history of Ceylon tea dates back to 1867 when the British introduced tea cultivation to Sri Lanka as a replacement for coffee. James Taylor, a Scottish planter, established the first tea plantations in the hill country, leveraging the ideal climate and altitude.
@@ -58,9 +58,9 @@ const History = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start max-w-5xl mx-auto">
             <div className="lg:col-span-2 animate-fade-up">
-              <div className="rounded-lg overflow-hidden h-full">
+              <div className="rounded-lg overflow-hidden h-full mt-30">
                 <img 
                   src="https://images.unsplash.com/photo-1531970227416-f0cddeb1f748?auto=format&fit=crop&q=80" 
                   alt="Historical tea plantation" 
