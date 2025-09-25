@@ -397,19 +397,7 @@ const History = () => {
   </div>
 </section>
       
-      <section className="py-16 bg-tea-dark-green text-white">
-        <div className="tea-container text-center">
-          <h2 className="section-title text-white after:bg-tea-gold inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2" data-aos="fade-down">
-            Present Day Legacy
-          </h2>
-          <p className="max-w-3xl mx-auto text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
-            Today, Loolecondera continues the legacy of excellence established over 150 years ago. While honoring traditional methods, we embrace sustainable practices and innovation to ensure the highest quality tea for generations to come.
-          </p>
-          <p className="max-w-3xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="400">
-            Our commitment to preserving the authentic character of Ceylon tea while meeting modern standards of quality and sustainability makes Loolecondera a living testament to Sri Lanka's rich tea heritage.
-          </p>
-        </div>
-      </section>
+     
     </div>
   );
 };
