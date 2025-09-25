@@ -169,7 +169,7 @@ const TeaTouringPage = () => {
     "Chengdu": images.chday6,
     "Guilin": images.chday7,
     "Hong Kong": images.chday8,
-    "Fujian": images.chday4, // Fallback to existing China image
+    "Fujian": images.chday4, 
   };
 
   const tourDestinations = {
@@ -242,16 +242,7 @@ const TeaTouringPage = () => {
           "West Lake scenery",
         ],
       },
-      {
-        name: "Fujian",
-        description:
-          "Explore the birthplace of oolong tea and traditional tea cultivation methods.",
-        highlights: [
-          "Oolong tea factory",
-          "Tea mountains",
-          "Traditional tea villages",
-        ],
-      },
+      
     ],
   };
 
@@ -431,7 +422,7 @@ const TeaTouringPage = () => {
   const chinaItinerary = [
     {
       day: "DAY 1",
-      title: "KATUNAYAKE | SHANGHAI | HANGZHOU",
+      title: "KATUNAYAKE | SHANGHAI",
       description: (
         <p>
           Arrival to Shanghai and visit to Zhejiang University (Hangzhou) where
@@ -472,70 +463,16 @@ const TeaTouringPage = () => {
             &#x2022; <strong>Dian Hong (Yunnan Black Tea)</strong>: This tea has
             a rich, malty flavor with notes of chocolate.
             <br />
-            &#x2022; <strong>Yixing Black Tea</strong>: This tea is known for
-            its mellow and sweet taste, often with fruity undertones.
+       
             <br />
-            &#x2022; <strong>Jin Jun Mei</strong>: Jin Jun Mei is made from
-            young tea buds and is highly prized for its rich and sweet flavor
-            profile.
+           
           </p>
 
-          <p>
-            Oolong tea is a traditional Chinese tea that falls between green and
-            black tea in terms of oxidation levels. Popular varieties include
-            Tie Guan Yin, Da Hong Pao, and Dan Cong.
-          </p>
+        
 
-          <p>
-            Chinese green tea is celebrated for its delicate flavors, health
-            benefits, and cultural significance. Here are some notable
-            varieties:
-          </p>
-          <p className="ml-8">
-            &#x2022; <strong>Longjing</strong>: It has a flat appearance, a
-            mellow, slightly sweet taste, and a distinctive chestnut-like aroma.
-            <br />
-            &#x2022; <strong>Bi Luo Chun</strong>: Known for its delicate,
-            fruity flavor and floral aroma.
-            <br />
-            &#x2022; <strong>Huangshan Maofeng</strong>: This tea features long,
-            slender leaves and offers a refreshing, slightly nutty flavor with
-            floral notes.
-            <br />
-            &#x2022; <strong>Gunpowder Tea</strong>: It is known for its rolled
-            leaves resembling pellets. It has a bold taste and is often used in
-            Moroccan mint tea.
-            <br />
-            &#x2022; <strong>Anji Bai Cha</strong>: Features pale green leaves
-            and offers a sweet, vegetal taste with hints of chestnut.
-            <br />
-            &#x2022; <strong>Tai Ping Hou Kui</strong>: This tea is known for
-            its large, flat leaves and has a smooth, floral taste.
-          </p>
+         
+          
 
-          <p>
-            Pu'erh tea is a unique and highly prized type of fermented tea
-            originating from the Yunnan province in China. The taste can vary
-            significantly depending on factors like the region, processing
-            methods, and aging such as earthy, woody, or even mushroom-like
-            flavors, with a smooth and sometimes mellow or slightly astringent
-            taste.
-          </p>
-
-          <p>
-            Chinese white tea is a delicate and minimally processed tea known
-            for its subtle flavors and gentle aroma.
-          </p>
-          <p className="ml-8">
-            &#x2022; <strong>Silver Needle (Bai Hao Yinzhen)</strong>: This is
-            one of the most famous types of Chinese white tea. It's made
-            exclusively from young tea buds and is known for its silvery
-            appearance, delicate flavor, and slight sweetness.
-            <br />
-            &#x2022; <strong>White Peony (Bai Mudan)</strong>: This tea is
-            slightly bolder than Silver Needle and may have a fuller flavor with
-            floral and fruity notes.
-          </p>
           <br />
         </div>
       ),
@@ -548,10 +485,7 @@ const TeaTouringPage = () => {
       title: "LONGJING VILLAGE | HANGZHOU",
       description: (
         <div>
-          <p>
-            Visit to Longjing Tea Garden and West Lake Hangzhou Benshan Longjing
-            Tea Museum
-          </p>
+          
 
           <br />
           <strong>Longjing Tea Garden And Tea Factory</strong>
@@ -568,20 +502,7 @@ const TeaTouringPage = () => {
             various steps to become the finished Longjing tea
           </p>
           <br />
-          <strong>West Lake Hangzhou Benshan Longjing Tea Museum</strong>
-          <p>
-            The West Lake Hangzhou Benshan Longjing Tea Museum is a specialized
-            institution dedicated to the cultivation, production, and
-            appreciation of Longjing tea
-          </p>
-          <p>
-            Visiting the West Lake Hangzhou Benshan Longjing Tea Museum provides
-            an opportunity to delve into the world of Longjing tea,
-            understanding its heritage, cultivation, and cultural significance
-            within the context of the West Lake region—a place renowned for its
-            exquisite tea production
-          </p>
-          <br />
+         
         </div>
       ),
 
@@ -591,52 +512,30 @@ const TeaTouringPage = () => {
     },
     {
       day: "DAY 4",
-      title: "TEA TASTING AND CHINESE TEA CEREMONY",
+      title: "CHINESE TEA CEREMONY",
       description: (
         <div>
           <p>
             Tasting session for various Chinese tea types and Chinese tea
             ceremony conducted by the Sri Lanka - China cultural association.
           </p>
-          <br />
-          <p>
-            <strong>Recommended visits :</strong>
-          </p>
+          
           <br />
 
-          <ul className="list-disc list-inside space-y-2 ml-8">
-            <li>
-              <strong>Hangzhou - Beijing Grand Canal</strong>
-              <br />
-              The Hangzhou-Beijing Grand Canal, also known as the
-              Beijing-Hangzhou Grand Canal, is an ancient waterway in China and
-              one of the world's oldest and longest artificial water systems.
-            </li>
-            <li>
+          
+           
+           
               <strong>Qiantang River Bund</strong>
               <br />
               The Qiantang River is known for its significant tidal bore
-              phenomenon, where a surge of water, often resembling a tidal wave,
+              phenomenon,
               travels upriver against the current during specific tidal
               conditions.
-            </li>
-            <li>
-              <strong>Lingyin Temple</strong>
-              <br />
-              Lingyin Temple, also known as the Temple of the Soul's Retreat, is
-              a renowned Buddhist temple located in Hangzhou, Zhejiang Province,
-              China.
-            </li>
-            <li>
-              <strong>Song Dynasty City</strong>
-              <br />
-              The Song Dynasty City (Songcheng) is a large-scale cultural theme
-              park located in Hangzhou, Zhejiang Province, China. It's a
-              recreation of the prosperous and culturally rich Song Dynasty.
-            </li>
-          </ul>
+            
+            
+          
           <br />
-          <p>Free to travel the city in the evening</p>
+         
         </div>
       ),
 
@@ -646,7 +545,7 @@ const TeaTouringPage = () => {
     },
     {
       day: "DAY 5",
-      title: "He Feng avenue | West Lake | Taizhiwan Gardens | Leifeng Pagoda",
+      title: "West Lake | Taizhiwan Gardens",
       description: (
         <div>
           <p>
@@ -673,16 +572,6 @@ const TeaTouringPage = () => {
           </ul>
           <br />
 
-          <p>
-            <strong>Leifeng Pagoda</strong>
-          </p>
-          <ul className="list-disc list-inside space-y-2 ml-8">
-            <li>
-              A historic pagoda standing on the southern banks of West Lake,
-              offering panoramic views of the lake and its surroundings.
-            </li>
-          </ul>
-          <br />
         </div>
       ),
 
