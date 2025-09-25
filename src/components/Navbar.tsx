@@ -44,9 +44,6 @@ const Navbar = () => {
             {/* <NavLink to="/investintea" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
               Invest in Tea
             </NavLink> */}
-            <NavLink to="#" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
-              Terms
-            </NavLink>
           </div>
 
           {/* Mobile Menu Button */}

@@ -13,6 +13,8 @@ import Specialties from "./pages/Specialties";
 import History from "./pages/History";
 import Touring from "./pages/Touring";
 import Contact from "./pages/Contact";
+import TermsAndConditions from "./pages/Terms";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Investintea from "./pages/investintea";
 
@@ -53,6 +55,8 @@ const App = () => {
               <Route path="/touring" element={<Touring />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/investintea" element={<Investintea />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               {/* Add more routes as needed */}
               <Route path="*" element={<NotFound />} />
             </Routes>

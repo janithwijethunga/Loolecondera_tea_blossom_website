@@ -91,6 +91,18 @@ const Footer = () => {
               >
                 Contact
               </Link>
+              <Link
+                to="/terms"
+                className="hover:text-tea-gold transition-colors duration-300"
+              >
+                Terms & Conditions
+              </Link>
+              <Link
+                to="/privacy"
+                className="hover:text-tea-gold transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
 
