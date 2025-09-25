@@ -1,10 +1,90 @@
 
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import HeroBanner from '../components/HomePage/HeroBanner';
 import historyBackground from '../assets/bg.webp';
 
 
 const History = () => {
+  // Auto-scroll functionality
+  const scrollContainerRef = useRef(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+  const autoScrollIntervalRef = useRef(null);
+
+  const startAutoScroll = () => {
+    if (autoScrollIntervalRef.current) return; // Prevent multiple intervals
+    
+    setIsAutoScrolling(true);
+    let scrollPosition = 0;
+    const scrollSpeed = 0.6; // pixels per frame
+    const container = scrollContainerRef.current;
+    
+    if (!container) return;
+    
+    autoScrollIntervalRef.current = setInterval(() => {
+      if (!container) return;
+      
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      
+      if (scrollPosition >= maxScroll) {
+        // Reset to beginning for continuous loop
+        scrollPosition = 0;
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+        
+        // Pause briefly at the beginning before continuing
+        setTimeout(() => {
+          scrollPosition = 0;
+        }, 2000);
+      } else {
+        scrollPosition += scrollSpeed;
+        container.scrollLeft = scrollPosition;
+      }
+    }, 16); // ~60fps
+  };
+
+  const stopAutoScroll = () => {
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+      autoScrollIntervalRef.current = null;
+      setIsAutoScrolling(false);
+    }
+  };
+
+  // Only pause auto-scroll on actual clicks, not mouse hover
+  const handleUserClick = () => {
+    if (isAutoScrolling) {
+      stopAutoScroll();
+      // Resume after 5 seconds of no interaction
+      setTimeout(() => {
+        if (scrollContainerRef.current) {
+          const rect = scrollContainerRef.current.getBoundingClientRect();
+          const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+          if (isInViewport) {
+            startAutoScroll();
+          }
+        }
+      }, 5000);
+    }
+  };
+
+  // Clean up on unmount
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-quart',
+    });
+
+    return () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+    };
+  }, []);
+
   const timelineEvents = [
     {
       year: "1867",
@@ -48,7 +128,7 @@ const History = () => {
       
       <section className="py-16 bg-white">
         <div className="tea-container">
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-5xl mx-auto mb-12" data-aos="fade-up">
             <h2 className="section-title">The Legacy of Loolecondera</h2>
             <p className="text-lg text-gray-700 mb-6">
               The history of Ceylon tea dates back to 1867 when the British introduced tea cultivation to Sri Lanka as a replacement for coffee. James Taylor, a Scottish planter, established the first tea plantations in the hill country, leveraging the ideal climate and altitude.
@@ -58,18 +138,18 @@ const History = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-            <div className="lg:col-span-2 animate-fade-up">
-              <div className="rounded-lg overflow-hidden h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start max-w-5xl mx-auto">
+            <div className="lg:col-span-2 animate-fade-up" data-aos="fade-right" data-aos-delay="200">
+              <div className="rounded-lg overflow-hidden h-full mt-30">
                 <img 
-                  src="https://images.unsplash.com/photo-1531970227416-f0cddeb1f748?auto=format&fit=crop&q=80" 
+                  src="https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FHistory%2FTea%20Xotics.webp?alt=media&token=d1fb9dff-aaa5-4648-9e50-d7ab59660d0d" 
                   alt="Historical tea plantation" 
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
             
-            <div className="lg:col-span-3 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <div className="lg:col-span-3 animate-fade-up" style={{ animationDelay: '0.1s' }} data-aos="fade-left" data-aos-delay="400">
               <h3 className="text-2xl font-bold text-tea-dark-green mb-4">James Taylor: The Pioneer</h3>
               <p className="text-gray-700 mb-4">
                 James Taylor arrived in Ceylon (now Sri Lanka) in 1852 and became the assistant supervisor of Loolecondera Estate. Using his knowledge of tea cultivation from India and China, he planted the first tea seeds and developed innovative processing methods.
@@ -77,63 +157,255 @@ const History = () => {
               <p className="text-gray-700 mb-4">
                 Taylor built a small tea factory on the estate and invented his own tea rolling machine, demonstrating remarkable innovation for his time. His methods for cultivating and processing tea formed the foundation of Ceylon's tea industry.
               </p>
-              <p className="text-gray-700">
+              {/* <p className="text-gray-700">
                 By the time of his death in 1892, Taylor had witnessed the transformation of Sri Lanka into one of the world's leading tea producers, an achievement largely due to his pioneering efforts.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
       </section>
       
       <section className="py-16 bg-tea-cream">
-        <div className="tea-container">
-          <h2 className="section-title text-center mx-auto after:left-1/4 after:right-1/4 after:w-1/2">
-            Timeline of Ceylon Tea
-          </h2>
+  <div className="tea-container">
+    <motion.h2 
+      className="section-title text-center mx-auto after:left-1/4 after:right-1/4 after:w-1/2 mb-16"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      Timeline of Ceylon Tea
+    </motion.h2>
+    
+    <div className="relative">
+      {/* Horizontal scroll container */}
+      <motion.div 
+        ref={scrollContainerRef}
+        className="overflow-x-auto scrollbar-hide pb-8"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        onViewportEnter={startAutoScroll}
+        onViewportLeave={stopAutoScroll}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
+        <style>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+        
+        {/* Main horizontal timeline container */}
+        <motion.div 
+          className="relative min-w-[1400px] mx-auto px-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {/* Horizontal timeline line with animated growth */}
+          <motion.div 
+            className="absolute top-1/2 left-8 right-8 h-1 bg-tea-light-green transform -translate-y-1/2 z-0"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            style={{ transformOrigin: "left center" }}
+          />
           
-          <div className="relative mt-12">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-tea-light-green"></div>
-            
-            <div className="space-y-12">
-              {timelineEvents.map((event, index) => (
-                <div 
-                  key={event.year} 
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                  } animate-fade-up`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="flex-1"></div>
-                  
-                  <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-20 h-20 rounded-full bg-tea-dark-green border-4 border-tea-cream z-10">
-                    <span className="text-white text-xs font-bold">{event.year}</span>
-                  </div>
-                  
-                  <div className="flex-1">
-                    <div className={`${
-                      index % 2 === 0 ? 'ml-10' : 'mr-10'
-                    } bg-white p-6 rounded-lg shadow-md tea-card`}>
-                      <h3 className="text-xl font-bold text-tea-dark-green mb-2">{event.title}</h3>
-                      <p className="text-gray-700">{event.description}</p>
+          {/* Timeline events container */}
+          <div className="relative flex justify-between items-center">
+            {timelineEvents.map((event, index) => (
+              <motion.div 
+                key={event.year}
+                className="relative flex flex-col items-center"
+                initial={{ opacity: 0, y: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.2,
+                  ease: "easeOut"
+                }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+              >
+                {/* Alternating top and bottom positioning */}
+                {index % 2 === 0 ? (
+                  // Events above the line (even indices)
+                  <>
+                    <div className="mb-8 w-64 text-center">
+                      <motion.div 
+                        className="relative bg-gradient-to-br from-white via-tea-cream to-white p-6 rounded-xl shadow-lg tea-card border-l-4 border-tea-gold overflow-hidden backdrop-blur-sm"
+                        whileHover={{ 
+                          y: -8, 
+                          rotateY: 5,
+                          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 20px rgba(184, 134, 11, 0.2)" 
+                        }}
+                        transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                      >
+                        {/* Decorative corner accent */}
+                        <div className="absolute top-0 right-0 w-8 h-8 bg-tea-gold opacity-10 rounded-bl-full"></div>
+                        <div className="absolute bottom-0 left-0 w-6 h-6 bg-tea-light-green opacity-10 rounded-tr-full"></div>
+                        
+                        
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
+                          <h3 className="text-lg font-bold text-tea-dark-green mb-3 flex items-center justify-center">
+                            <span className="w-2 h-2 bg-tea-gold rounded-full mr-2 animate-pulse"></span>
+                            {event.title}
+                          </h3>
+                          <p className="text-sm text-gray-700 leading-relaxed">{event.description}</p>
+                        </div>
+                        
+                        {/* Subtle pattern overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-50 pointer-events-none"></div>
+                      </motion.div>
+                      {/* Animated connector line from card to circle */}
+                      <motion.div 
+                        className="w-0.5 h-8 bg-tea-light-green mx-auto"
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        transition={{ delay: index * 0.2 + 0.5, duration: 0.3 }}
+                        viewport={{ once: true }}
+                      />
                     </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+                    
+                    {/* Timeline circle with pulse animation */}
+                    <motion.div 
+                      className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-tea-dark-green to-tea-light-green border-4 border-white z-10 shadow-xl"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ 
+                        delay: index * 0.2 + 0.3, 
+                        type: "spring", 
+                        stiffness: 500, 
+                        damping: 10 
+                      }}
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotate: 360,
+                        boxShadow: "0 0 30px rgba(184, 134, 11, 0.6)"
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      {/* Inner glow ring */}
+                      <div className="absolute inset-1 rounded-full bg-gradient-to-br from-tea-gold/20 to-transparent"></div>
+                      <span className="text-white text-xs font-bold relative z-10">{event.year}</span>
+                      {/* Pulse effect */}
+                     
+                    </motion.div>
+                    
+                    {/* Empty space below for alternating layout */}
+                    <div className="mt-8 w-64 h-32"></div>
+                  </>
+                ) : (
+                  // Events below the line (odd indices)
+                  <>
+                    {/* Empty space above for alternating layout */}
+                    <div className="mb-8 w-64 h-32"></div>
+                    
+                    {/* Timeline circle with pulse animation */}
+                    <motion.div 
+                      className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-tea-dark-green to-tea-light-green border-4 border-white z-10 shadow-xl"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ 
+                        delay: index * 0.2 + 0.3, 
+                        type: "spring", 
+                        stiffness: 500, 
+                        damping: 10 
+                      }}
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotate: 360,
+                        boxShadow: "0 0 30px rgba(34, 197, 94, 0.6)"
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      {/* Inner glow ring */}
+                      <div className="absolute inset-1 rounded-full bg-gradient-to-br from-tea-light-green/20 to-transparent"></div>
+                      <span className="text-white text-xs font-bold relative z-10">{event.year}</span>
+                     
+                     
+                    </motion.div>
+                    
+                    <div className="mt-8 w-64 text-center">
+                      {/* Animated connector line from circle to card */}
+                      <motion.div 
+                        className="w-0.5 h-8 bg-tea-light-green mx-auto"
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        transition={{ delay: index * 0.2 + 0.5, duration: 0.3 }}
+                        viewport={{ once: true }}
+                      />
+                      <motion.div 
+                        className="relative bg-gradient-to-tl from-white via-tea-cream to-white p-6 rounded-xl shadow-lg tea-card border-r-4 border-tea-light-green overflow-hidden backdrop-blur-sm"
+                        whileHover={{ 
+                          y: -8, 
+                          rotateY: -5,
+                          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 20px rgba(34, 197, 94, 0.2)" 
+                        }}
+                        transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                      >
+                        {/* Decorative corner accent */}
+                        <div className="absolute top-0 left-0 w-8 h-8 bg-tea-light-green opacity-10 rounded-br-full"></div>
+                        <div className="absolute bottom-0 right-0 w-6 h-6 bg-tea-gold opacity-10 rounded-tl-full"></div>
+                        
+                        
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
+                          <h3 className="text-lg font-bold text-tea-dark-green mb-3 flex items-center justify-center">
+                            <span className="w-2 h-2 bg-tea-light-green rounded-full mr-2 animate-pulse"></span>
+                            {event.title}
+                          </h3>
+                          <p className="text-sm text-gray-700 leading-relaxed">{event.description}</p>
+                        </div>
+                        
+                        {/* Subtle pattern overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/5 to-transparent opacity-50 pointer-events-none"></div>
+                      </motion.div>
+                    </div>
+                  </>
+                )}
+              </motion.div>
+                      ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.div>
+      
+      
+      
+      {/* Scroll indicator for mobile */}
+      <motion.div 
+        className="text-center mt-4 md:hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-sm text-gray-600">← Scroll horizontally to view full timeline →</p>
+      </motion.div>
+      
+   
+    </div>
+  </div>
+</section>
       
       <section className="py-16 bg-tea-dark-green text-white">
         <div className="tea-container text-center">
-          <h2 className="section-title text-white after:bg-tea-gold inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2">
+          <h2 className="section-title text-white after:bg-tea-gold inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2" data-aos="fade-down">
             Present Day Legacy
           </h2>
-          <p className="max-w-3xl mx-auto text-lg mb-8">
+          <p className="max-w-3xl mx-auto text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
             Today, Loolecondera continues the legacy of excellence established over 150 years ago. While honoring traditional methods, we embrace sustainable practices and innovation to ensure the highest quality tea for generations to come.
           </p>
-          <p className="max-w-3xl mx-auto text-lg">
+          <p className="max-w-3xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="400">
             Our commitment to preserving the authentic character of Ceylon tea while meeting modern standards of quality and sustainability makes Loolecondera a living testament to Sri Lanka's rich tea heritage.
           </p>
         </div>
