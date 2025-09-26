@@ -60,7 +60,22 @@ const Index = () => {
       <img src={imag} alt="" />
 
       
-      <section className="relative overflow-hidden">
+      
+
+      <div>
+        <CeylonTea />
+      </div>
+      <div>
+        <Specialist />
+      </div>
+      <div>
+        <History />
+      </div>
+      <div>
+        <TeaState />
+      </div>
+      <div>
+        <section className="relative overflow-hidden">
         <img
           src={images.teaplantationsgreenmountainfieldswallpaperpreview_1x}
           alt="Hero Banner"
@@ -93,25 +108,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      <div>
-        <CeylonTea />
       </div>
-      <div>
-        <Specialist />
-      </div>
-      <div>
-        <History />
-      </div>
-      <div>
-        <TeaState />
-      </div>
-      <div>
-        <WorldWide />
-      </div>
-      <div>
-        <TeaCollection />
-      </div>
+    
       <div>
         <TeaVideo />
       </div>

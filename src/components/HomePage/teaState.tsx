@@ -106,15 +106,7 @@ const LoolkanduraTeaEstate = () => {
           </p>
         </div>
 
-        {/* Add a footer with decorative elements */}
-        <div
-          className="mt-16 flex justify-center animate-on-scroll opacity-0 transition-all duration-1000 ease-out"
-          style={{ animationDelay: "1s" }}
-        >
-          <div className="w-16 h-16 bg-green-800 opacity-20 rounded-full"></div>
-          <div className="w-24 h-24 bg-yellow-400 opacity-20 rounded-full -ml-6"></div>
-          <div className="w-16 h-16 bg-green-800 opacity-20 rounded-full -ml-6"></div>
-        </div>
+       
       </div>
 
       {/* Add CSS for animations */}
