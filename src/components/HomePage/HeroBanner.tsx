@@ -9,14 +9,14 @@ interface HeroBannerProps {
 
 const HeroBanner: React.FC<HeroBannerProps> = ({ backgroundImage, title, subtitle }) => {
   return (
-    <div className="relative h-[430px] flex items-center justify-center overflow-hidden text-center ">
+    <div className="relative h-[380px] flex items-center justify-center overflow-hidden text-center ">
       {/* Background Image */}
       <motion.div
         className="absolute inset-0 z-0 flex items-start justify-center pt-4"
       
       >
         <div
-          className="w-full max-w-5xl h-96 md:h-[410px] bg-cover bg-center rounded-3xl "
+          className="w-full max-w-5xl h-80 md:h-[350px] bg-cover bg-center rounded-3xl "
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
       </motion.div>

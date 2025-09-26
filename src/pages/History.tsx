@@ -3,8 +3,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import HeroBanner from '../components/HomePage/HeroBanner';
+import HeroBanner2 from '../components/HomePage/HeroBanner2';
 import historyBackground from '../assets/bg.webp';
+import { images } from '../assets/assets';
 
 
 const History = () => {
@@ -120,10 +121,9 @@ const History = () => {
 
   return (
     <div>
-      <HeroBanner 
-        title="Our History" 
-        subtitle="The rich heritage of Ceylon tea"
-        backgroundImage={historyBackground}
+      <HeroBanner2 
+       
+        backgroundImage={images.ProductsHero1}
       />
       
       <section className="min-h-screen flex items-center justify-center bg-white py-16">

@@ -55,11 +55,11 @@ const Index = () => {
   const heroImage = isMobile ? images.Herocover_mobile : images.bannerPC;
 
   return (
-    <div  className="">
+    <div className="">
+      <div className="w-screen overflow-hidden">
+        <img src={imag} alt="" className="w-full h-auto object-cover" />
+      </div>
 
-      <img src={imag} alt="" />
-
-      
       
 
       <div>
