@@ -1,14 +1,23 @@
 import React, { useState } from "react";
+import { CgPlayButtonO } from "react-icons/cg";
 
 import { images } from "./../../assets/assets.js";
 
-
-// import BG from "./../../assets/Homepage/bg3.webp"
+// Check icon component
+const CheckIcon = () => (
+  <div className="flex-shrink-0 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        fillRule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clipRule="evenodd"
+      />
+    </svg>
+  </div>
+);
 
 const TeaVideo = () => {
   const [playing, setPlaying] = useState(false);
-
-  // YouTube video URL from your requirements
   const videoUrl =
     "https://www.youtube.com/embed/K3ruUyZgmsY?autoplay=1&controls=1&loop=0&mute=1&rel=0&start=0&html5=1&v=q4d8g9Dn3ww";
 
@@ -16,61 +25,86 @@ const TeaVideo = () => {
     setPlaying(true);
   };
 
+  const features = [
+    "Trusted, Vetted Professionals",
+    "U.S.-Based Support",
+    "Money-Back Guarantee",
+    "Sri Lankan Service Team",
+    "Peace of Mind",
+  ];
+
   return (
-    <div className="relative w-full h-96">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-fixed bg-center bg-cover z-0"
-        style={{ backgroundImage: `url(${images.bg4})` }}
-      ></div>
+    <section className="bg-[#fcf9ef] py-20 lg:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left column - Content */}
+          <div className="space-y-8">
+            {/* Headline */}
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-green-800 leading-tight mb-6">
+              Connecting Homes to{" "}
+              <span className="text-green-800">Excellence</span>
+            </h2>
 
-      {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+            {/* Supporting paragraph */}
+            <p className="max-w-xl text-lg text-gray-600 leading-relaxed mb-6">
+              Experience premium Ceylon tea delivered with unmatched quality and
+              service. Our commitment to excellence connects tea lovers
+              worldwide to the finest Sri Lankan tea traditions.
+            </p>
 
-      {/* Content container */}
-      <div className="relative z-20 flex flex-col items-center justify-center h-full">
-        {!playing ? (
-          <>
-            {/* Tea cup image & play button */}
-            <div className="relative mb-8">
-              <button
-                onClick={handlePlayClick}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-600 text-red-500 rounded-full w-16 h-16 flex items-center justify-center hover:bg-red-700 transition-colors"
-                aria-label="Play video"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
+            {/* Features list */}
+            <div className="ml-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-5">
+                    <CheckIcon />
+                    <span className="text-gray-800 font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <h1 className="text-4xl font-bold text-white mb-4 text-center font-poppins ">
-              LOOLECONDERA TEA
-            </h1>
-          </>
-        ) : (
-          /* YouTube video iframe */
-          <div className="w-full max-w-4xl aspect-video">
-            <iframe
-              src={videoUrl}
-              className="w-full h-full"
-              title="Loolecondera Tea Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
           </div>
-        )}
+
+          {/* Right column - Video */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="w-full max-w-3xl">
+              {!playing ? (
+                /* Video placeholder with thumbnail and play button */
+                <div
+                  className="relative aspect-video bg-cover bg-center rounded-3xl shadow-2xl overflow-hidden"
+                  style={{
+                    backgroundImage: `url('https://i.pinimg.com/1200x/fb/fe/41/fbfe41beb79eb4791e7b83346162af47.jpg')`,
+                  }}
+                >
+                  {/* Dark overlay for better contrast */}
+                  <div className="absolute inset-0 bg-black/40"></div>
+
+                  {/* Play button */}
+                  <button
+                    onClick={handlePlayClick}
+                    className="absolute inset-0 flex items-center justify-center group"
+                    aria-label="Play video"
+                  >
+                    <CgPlayButtonO className="w-16 h-16 text-white" />
+                  </button>
+                </div>
+              ) : (
+                /* YouTube video iframe */
+                <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
+                  <iframe
+                    src={videoUrl}
+                    className="w-full h-full"
+                    title="Promo video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
-      
-    </div>
+    </section>
   );
 };
 

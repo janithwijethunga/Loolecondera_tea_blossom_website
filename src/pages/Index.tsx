@@ -115,23 +115,7 @@ const Index = () => {
       </div>
       <div>
       <div className="relative w-full">
-      {/* Background Image */}
-      <div>
-        <img
-          src={images.bg3}
-          alt="Background"
-          className="absolute inset-0 w-full h-full object-cover "
-        />
-      </div>
-      
-      {/* Text Overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-fullb p-8">
-        <h1 className="text-white text-4xl md:text-6xl font-dancingfont Italic text-center leading-relaxed">
-          <span className="block">enjoy the best cup of</span>
-          <span className="block text-5xl md:text-7xl mt-2">Ceylon Tea</span>
-        </h1>
-        <div className="w-16 h-1 bg-white mt-4 mb-6"></div>
-      </div>
+
     </div>
       </div>
 
@@ -139,7 +123,22 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="tea-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-up">
+            <div
+              className="relative h-80 md:h-96 rounded-xl overflow-hidden shadow-2xl animate-fade-up"
+            >
+              <img
+                src={images.oldbuilding}
+                alt="Tea plantation"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-6">
+                <span className="text-white font-playfair text-xl">
+                  Established 1867
+                </span>
+              </div>
+            </div>
+            <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <h2 className="section-title text-tea-dark-green text-3xl font-bold mb-4">
                 Our Heritage
               </h2>
@@ -161,23 +160,6 @@ const Index = () => {
                 Explore Our History
                 <ArrowRight size={18} className="ml-2" />
               </Link>
-            </div>
-
-            <div
-              className="relative h-80 md:h-96 rounded-xl overflow-hidden shadow-2xl animate-fade-up"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <img
-                src={images.oldbuilding}
-                alt="Tea plantation"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-6">
-                <span className="text-white font-playfair text-xl">
-                  Established 1867
-                </span>
-              </div>
             </div>
           </div>
         </div>

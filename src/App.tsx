@@ -21,6 +21,20 @@ import Investintea from "./pages/investintea";
 
 const queryClient = new QueryClient();
 
+const ProductsRedirect = () => {
+  React.useEffect(() => {
+    window.location.href = "https://store.loolecondera.lk/products";
+  }, []);
+  return null;
+};
+
+const ContactRedirect = () => {
+  React.useEffect(() => {
+    window.location.href = "https://store.loolecondera.lk/contact";
+  }, []);
+  return null;
+};
+
 const App = () => {
 
   const [showSplash, setShowSplash] = useState(true);
@@ -51,11 +65,11 @@ const App = () => {
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/products" element={<Products />} />
+              <Route path="/products" element={<ProductsRedirect />} />
               <Route path="/specialties" element={<Specialties />} />
               <Route path="/history" element={<History />} />
               <Route path="/touring" element={<Touring />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/contact" element={<ContactRedirect />} />
               <Route path="/investintea" element={<Investintea />} />
               <Route path="/terms" element={<TermsAndConditions />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />

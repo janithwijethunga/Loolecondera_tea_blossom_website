@@ -18,7 +18,7 @@ const CeylonTea: React.FC = () => {
 
       {/* Main Content */}
       <div className="relative z-20 max-w-5xl px-6 py-12 md:px-16 text-center">
-        <div className="text-3xl font-extrabold text-[#66ff01] mb-6 tracking-widest">
+        <div className="text-3xl font-normal font-serif text-[#ffd115] mb-6 tracking-widest">
           LOOLECONDERA CEYLON TEA
         </div>
 
