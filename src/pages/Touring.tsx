@@ -956,7 +956,7 @@ const TeaTouringPage = () => {
       )}
 
       {/* Tour Details Section */}
-      <section className="py-16 bg-white">
+      <section className="py-1 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-green-800 mb-3 text-center">
