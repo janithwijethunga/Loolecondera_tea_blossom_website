@@ -59,10 +59,7 @@ const Index = () => {
 
       <img src={imag} alt="" />
 
-      <div>
-        <img src={images.redbanner_1x} alt="Hero Banner" className="w-full object-cover" />
-      </div>
-      {/* Premium Tea Section with Banner 3 Background */}
+      
       <section className="relative overflow-hidden">
         <img
           src={images.teaplantationsgreenmountainfieldswallpaperpreview_1x}

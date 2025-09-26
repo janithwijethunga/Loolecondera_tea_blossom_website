@@ -142,7 +142,7 @@ export const images = {
   grd: "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fgrd.webp?alt=media&token=6faa693c-3101-4072-9101-586b7eaebdae",
   hero: "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fhero.webp?alt=media&token=030d1047-5ae4-4309-b220-6940dbf3771e",
   slday1:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fslday1.webp?alt=media&token=26cd72f3-263f-414e-848d-efbc082120e4",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FTea%20tour%2F%F0%9F%8C%8F%D0%A8%D1%80%D1%96-%D0%9B%D0%B0%D0%BD%D0%BA%D0%B0%20%F0%9F%8C%8A%F0%9F%92%B6%E2%82%AC1248%20-%20%D0%B2%D0%B0%D1%80%D1%82%D1%96%D1%81%D1%82%D1%8C%20%D0%B7%20%D0%BE%D1%81%D0%BE%D0%B1%D0%B8_%F0%9F%9B%96Tangeri.webp?alt=media&token=2d0db29b-44e3-4d2f-a11c-086e5139d80c",
   slday2:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fslday2.webp?alt=media&token=bc40593b-d79e-4833-ba93-4e26865e2be6",
   slday3:
@@ -150,11 +150,11 @@ export const images = {
   slday4:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fslday4.webp?alt=media&token=541a7d3e-f822-48fe-8ed4-4c510f757353",
   slday5:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fslday5.webp?alt=media&token=310b06f7-d914-4d9f-9e45-0c0b6d534ffb",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FTea%20tour%2FGalle%20fort%20_%20in%20sri%20lanka%20%F0%9F%87%B1%F0%9F%87%B0.webp?alt=media&token=a7ac2d04-a0d8-4c5c-85cc-bfef2057cb83",
   slday6:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fslday6.webp?alt=media&token=2064e2b5-5b08-4bf1-a5b0-2c174c35e4b4",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FTea%20tour%2FA%20time%20when%20Colombo%20city%20is%20covered%20by%20clouds%20%F0%9F%93%B7%20Sony%20A7R5%20%2B%2024-70mm%20GM%20II%20CameraLK%20SonyAlpha%20.webp?alt=media&token=de1f1e79-97d6-4e0b-adcc-4599d2c947d9",
   slday7:
-    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fslday7.webp?alt=media&token=026f2649-6ef8-44b8-9a86-c741169ab583",
+    "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2FTea%20tour%2FSri%20Lankan%20Airlines%20%F0%9F%87%B1%F0%9F%87%B0%20_%20Headquarters_%20Colombo%2C%20Sri%20Lanka.webp?alt=media&token=8767478b-e398-49cd-87d0-7aa9c49a9a00",
   sltour:
     "https://firebasestorage.googleapis.com/v0/b/looleconderalk.firebasestorage.app/o/Loolkondera%20Assets%2Ftours%2Fsltour.webp?alt=media&token=5d22d7e4-a1a0-473f-83c4-84aefc04631d",
   teavisit:

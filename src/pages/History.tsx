@@ -126,9 +126,9 @@ const History = () => {
         backgroundImage={historyBackground}
       />
       
-      <section className="py-16 bg-white">
+      <section className="min-h-screen flex items-center justify-center bg-white py-16">
         <div className="tea-container">
-          <div className="max-w-5xl mx-auto mb-12" data-aos="fade-up">
+          <div className="max-w-5xl mx-auto text-center" data-aos="fade-up">
             <h2 className="section-title">The Legacy of Loolecondera</h2>
             <p className="text-lg text-gray-700 mb-6">
               The history of Ceylon tea dates back to 1867 when the British introduced tea cultivation to Sri Lanka as a replacement for coffee. James Taylor, a Scottish planter, established the first tea plantations in the hill country, leveraging the ideal climate and altitude.
@@ -138,7 +138,7 @@ const History = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start max-w-5xl mt-10 mx-auto">
             <div className="lg:col-span-2 animate-fade-up" data-aos="fade-right" data-aos-delay="200">
               <div className="rounded-lg overflow-hidden h-full mt-30">
                 <img 
@@ -149,7 +149,7 @@ const History = () => {
               </div>
             </div>
             
-            <div className="lg:col-span-3 animate-fade-up" style={{ animationDelay: '0.1s' }} data-aos="fade-left" data-aos-delay="400">
+            <div className="lg:col-span-3 animate-fade-up mt-0" style={{ animationDelay: '0.1s' }} data-aos="fade-left" data-aos-delay="400">
               <h3 className="text-2xl font-bold text-tea-dark-green mb-4">James Taylor: The Pioneer</h3>
               <p className="text-gray-700 mb-4">
                 James Taylor arrived in Ceylon (now Sri Lanka) in 1852 and became the assistant supervisor of Loolecondera Estate. Using his knowledge of tea cultivation from India and China, he planted the first tea seeds and developed innovative processing methods.
@@ -397,19 +397,7 @@ const History = () => {
   </div>
 </section>
       
-      <section className="py-16 bg-tea-dark-green text-white">
-        <div className="tea-container text-center">
-          <h2 className="section-title text-white after:bg-tea-gold inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2" data-aos="fade-down">
-            Present Day Legacy
-          </h2>
-          <p className="max-w-3xl mx-auto text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
-            Today, Loolecondera continues the legacy of excellence established over 150 years ago. While honoring traditional methods, we embrace sustainable practices and innovation to ensure the highest quality tea for generations to come.
-          </p>
-          <p className="max-w-3xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="400">
-            Our commitment to preserving the authentic character of Ceylon tea while meeting modern standards of quality and sustainability makes Loolecondera a living testament to Sri Lanka's rich tea heritage.
-          </p>
-        </div>
-      </section>
+     
     </div>
   );
 };

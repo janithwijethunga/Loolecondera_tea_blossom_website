@@ -12,7 +12,7 @@ const { Title, Text } = Typography;
 const TeaCollection = () => {
   const teas = [
     {
-      id: 1,
+      id: 1,   
       name: "OP",
       price: "$1.20",
       description:

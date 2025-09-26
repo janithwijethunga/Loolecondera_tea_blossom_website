@@ -2,6 +2,154 @@ import React, { useState } from "react";
 import { CheckCircle, Calendar, Users, Clock, Star } from "lucide-react";
 
 import { images } from "../assets/assets.js";
+
+// Reusable Tour Day Card Component
+const TourDayCard = ({ day, dayNumber }) => {
+  return (
+    <div className="border-l-4 border-green-600 pl-6 pb-3 relative">
+      {/* Day indicator dot */}
+      <div className="absolute -left-3 top-0 w-6 h-6 bg-green-600 rounded-full flex items-center justify-center">
+        <span className="text-white text-xs font-bold">
+          {dayNumber}
+        </span>
+      </div>
+
+      {/* Day Header */}
+      <div className="flex flex-col md:flex-row md:items-center gap-2 mb-6">
+        <span className="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full">
+          {day.day}
+        </span>
+        <h4 className="text-xl font-bold text-green-800">
+          {day.title}
+        </h4>
+      </div>
+
+      {/* Two-column responsive layout */}
+      <div className="flex flex-col lg:flex-row gap-6">
+        {/* Image column - 50% on desktop, full width on mobile */}
+        <div className="w-full lg:w-1/2">
+          <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <img
+              src={day.image}
+              alt={day.imageAlt}
+              className="w-full h-64 lg:h-80 object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Content column - 50% on desktop, full width on mobile */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center">
+          <div className="bg-gradient-to-br from-green-50 to-amber-50 p-6 rounded-xl shadow-sm h-full">
+            {/* Description Content */}
+            <div className="text-gray-700 mb-4 leading-relaxed space-y-3">
+              {day.description}
+            </div>
+
+            {/* Accommodation Info */}
+            {day.accommodation && (
+              <div className="mt-4 pt-4 border-t border-green-200">
+                <div className="flex items-start">
+                  <svg
+                    className="w-5 h-5 mr-3 text-amber-600 flex-shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    ></path>
+                  </svg>
+                  <p className="text-amber-700 font-medium italic text-sm">
+                    {day.accommodation}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Reusable Itinerary Section Component
+const ItinerarySection = ({
+  day,
+  title,
+  imageSrc,
+  imageAlt,
+  description,
+  note,
+  reverse = false
+}) => {
+  return (
+    <section className="w-full max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className={`grid md:grid-cols-2 items-center gap-8 md:gap-12 py-10 ${
+        reverse ? 'md:grid-flow-col-dense' : ''
+      }`}>
+        {/* Image Column */}
+        <div className={`w-full ${reverse ? 'md:order-2' : 'md:order-1'}`}>
+          <img
+            src={imageSrc}
+            alt={imageAlt || title}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-[280px] md:h-[360px] rounded-2xl shadow-xl object-cover"
+          />
+        </div>
+
+        {/* Text Column */}
+        <div className={`w-full space-y-2 md:space-y-3 ${reverse ? 'md:order-1' : 'md:order-2'}`}>
+          <div className="flex flex-col md:flex-row md:items-center gap-2 mb-4">
+            <span className="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full self-start">
+              DAY {day}
+            </span>
+            <h3 className="text-xl md:text-2xl font-bold text-green-800 leading-tight">
+              {title}
+            </h3>
+          </div>
+
+          {/* Description Content */}
+          <div className="text-gray-700 leading-relaxed space-y-3">
+            {description}
+          </div>
+
+          {/* Optional Note/Callout */}
+          {note && (
+            <div className="mt-2">
+              {note}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Itinerary List Component
+const ItineraryList = ({ items }) => {
+  return (
+    <div className="space-y-0">
+      {items.map((item, index) => (
+        <ItinerarySection
+          key={index}
+          day={item.day}
+          title={item.title}
+          imageSrc={item.imageSrc}
+          imageAlt={item.imageAlt}
+          description={item.description}
+          note={item.note}
+          reverse={index % 2 === 1} // Alternate layout: true for even items (2nd, 4th, 6th...)
+        />
+      ))}
+    </div>
+  );
+};
+
 const TeaTouringPage = () => {
   const [activeTab, setActiveTab] = useState("srilanka");
 
@@ -21,7 +169,7 @@ const TeaTouringPage = () => {
     "Chengdu": images.chday6,
     "Guilin": images.chday7,
     "Hong Kong": images.chday8,
-    "Fujian": images.chday4, // Fallback to existing China image
+    "Fujian": images.chday4, 
   };
 
   const tourDestinations = {
@@ -94,16 +242,7 @@ const TeaTouringPage = () => {
           "West Lake scenery",
         ],
       },
-      {
-        name: "Fujian",
-        description:
-          "Explore the birthplace of oolong tea and traditional tea cultivation methods.",
-        highlights: [
-          "Oolong tea factory",
-          "Tea mountains",
-          "Traditional tea villages",
-        ],
-      },
+      
     ],
   };
 
@@ -283,7 +422,7 @@ const TeaTouringPage = () => {
   const chinaItinerary = [
     {
       day: "DAY 1",
-      title: "KATUNAYAKE | SHANGHAI | HANGZHOU",
+      title: "KATUNAYAKE | SHANGHAI",
       description: (
         <p>
           Arrival to Shanghai and visit to Zhejiang University (Hangzhou) where
@@ -324,70 +463,16 @@ const TeaTouringPage = () => {
             &#x2022; <strong>Dian Hong (Yunnan Black Tea)</strong>: This tea has
             a rich, malty flavor with notes of chocolate.
             <br />
-            &#x2022; <strong>Yixing Black Tea</strong>: This tea is known for
-            its mellow and sweet taste, often with fruity undertones.
+       
             <br />
-            &#x2022; <strong>Jin Jun Mei</strong>: Jin Jun Mei is made from
-            young tea buds and is highly prized for its rich and sweet flavor
-            profile.
+           
           </p>
 
-          <p>
-            Oolong tea is a traditional Chinese tea that falls between green and
-            black tea in terms of oxidation levels. Popular varieties include
-            Tie Guan Yin, Da Hong Pao, and Dan Cong.
-          </p>
+        
 
-          <p>
-            Chinese green tea is celebrated for its delicate flavors, health
-            benefits, and cultural significance. Here are some notable
-            varieties:
-          </p>
-          <p className="ml-8">
-            &#x2022; <strong>Longjing</strong>: It has a flat appearance, a
-            mellow, slightly sweet taste, and a distinctive chestnut-like aroma.
-            <br />
-            &#x2022; <strong>Bi Luo Chun</strong>: Known for its delicate,
-            fruity flavor and floral aroma.
-            <br />
-            &#x2022; <strong>Huangshan Maofeng</strong>: This tea features long,
-            slender leaves and offers a refreshing, slightly nutty flavor with
-            floral notes.
-            <br />
-            &#x2022; <strong>Gunpowder Tea</strong>: It is known for its rolled
-            leaves resembling pellets. It has a bold taste and is often used in
-            Moroccan mint tea.
-            <br />
-            &#x2022; <strong>Anji Bai Cha</strong>: Features pale green leaves
-            and offers a sweet, vegetal taste with hints of chestnut.
-            <br />
-            &#x2022; <strong>Tai Ping Hou Kui</strong>: This tea is known for
-            its large, flat leaves and has a smooth, floral taste.
-          </p>
+         
+          
 
-          <p>
-            Pu'erh tea is a unique and highly prized type of fermented tea
-            originating from the Yunnan province in China. The taste can vary
-            significantly depending on factors like the region, processing
-            methods, and aging such as earthy, woody, or even mushroom-like
-            flavors, with a smooth and sometimes mellow or slightly astringent
-            taste.
-          </p>
-
-          <p>
-            Chinese white tea is a delicate and minimally processed tea known
-            for its subtle flavors and gentle aroma.
-          </p>
-          <p className="ml-8">
-            &#x2022; <strong>Silver Needle (Bai Hao Yinzhen)</strong>: This is
-            one of the most famous types of Chinese white tea. It's made
-            exclusively from young tea buds and is known for its silvery
-            appearance, delicate flavor, and slight sweetness.
-            <br />
-            &#x2022; <strong>White Peony (Bai Mudan)</strong>: This tea is
-            slightly bolder than Silver Needle and may have a fuller flavor with
-            floral and fruity notes.
-          </p>
           <br />
         </div>
       ),
@@ -400,10 +485,7 @@ const TeaTouringPage = () => {
       title: "LONGJING VILLAGE | HANGZHOU",
       description: (
         <div>
-          <p>
-            Visit to Longjing Tea Garden and West Lake Hangzhou Benshan Longjing
-            Tea Museum
-          </p>
+          
 
           <br />
           <strong>Longjing Tea Garden And Tea Factory</strong>
@@ -420,20 +502,7 @@ const TeaTouringPage = () => {
             various steps to become the finished Longjing tea
           </p>
           <br />
-          <strong>West Lake Hangzhou Benshan Longjing Tea Museum</strong>
-          <p>
-            The West Lake Hangzhou Benshan Longjing Tea Museum is a specialized
-            institution dedicated to the cultivation, production, and
-            appreciation of Longjing tea
-          </p>
-          <p>
-            Visiting the West Lake Hangzhou Benshan Longjing Tea Museum provides
-            an opportunity to delve into the world of Longjing tea,
-            understanding its heritage, cultivation, and cultural significance
-            within the context of the West Lake region—a place renowned for its
-            exquisite tea production
-          </p>
-          <br />
+         
         </div>
       ),
 
@@ -443,52 +512,30 @@ const TeaTouringPage = () => {
     },
     {
       day: "DAY 4",
-      title: "TEA TASTING AND CHINESE TEA CEREMONY",
+      title: "CHINESE TEA CEREMONY",
       description: (
         <div>
           <p>
             Tasting session for various Chinese tea types and Chinese tea
             ceremony conducted by the Sri Lanka - China cultural association.
           </p>
-          <br />
-          <p>
-            <strong>Recommended visits :</strong>
-          </p>
+          
           <br />
 
-          <ul className="list-disc list-inside space-y-2 ml-8">
-            <li>
-              <strong>Hangzhou - Beijing Grand Canal</strong>
-              <br />
-              The Hangzhou-Beijing Grand Canal, also known as the
-              Beijing-Hangzhou Grand Canal, is an ancient waterway in China and
-              one of the world's oldest and longest artificial water systems.
-            </li>
-            <li>
+          
+           
+           
               <strong>Qiantang River Bund</strong>
               <br />
               The Qiantang River is known for its significant tidal bore
-              phenomenon, where a surge of water, often resembling a tidal wave,
+              phenomenon,
               travels upriver against the current during specific tidal
               conditions.
-            </li>
-            <li>
-              <strong>Lingyin Temple</strong>
-              <br />
-              Lingyin Temple, also known as the Temple of the Soul's Retreat, is
-              a renowned Buddhist temple located in Hangzhou, Zhejiang Province,
-              China.
-            </li>
-            <li>
-              <strong>Song Dynasty City</strong>
-              <br />
-              The Song Dynasty City (Songcheng) is a large-scale cultural theme
-              park located in Hangzhou, Zhejiang Province, China. It's a
-              recreation of the prosperous and culturally rich Song Dynasty.
-            </li>
-          </ul>
+            
+            
+          
           <br />
-          <p>Free to travel the city in the evening</p>
+         
         </div>
       ),
 
@@ -498,7 +545,7 @@ const TeaTouringPage = () => {
     },
     {
       day: "DAY 5",
-      title: "He Feng avenue | West Lake | Taizhiwan Gardens | Leifeng Pagoda",
+      title: "West Lake | Taizhiwan Gardens",
       description: (
         <div>
           <p>
@@ -525,16 +572,6 @@ const TeaTouringPage = () => {
           </ul>
           <br />
 
-          <p>
-            <strong>Leifeng Pagoda</strong>
-          </p>
-          <ul className="list-disc list-inside space-y-2 ml-8">
-            <li>
-              A historic pagoda standing on the southern banks of West Lake,
-              offering panoramic views of the lake and its surroundings.
-            </li>
-          </ul>
-          <br />
         </div>
       ),
 
@@ -695,6 +732,7 @@ const TeaTouringPage = () => {
 
   return (
     <div className="bg-gradient-to-b from-green-50 to-amber-50 min-h-screen">
+      <style>{`@keyframes slide { 0% { transform: translateX(0); } 50% { transform: translateX(10px); } 100% { transform: translateX(0); } } .animate-slide { animation: slide 2s ease-in-out infinite alternate; }`}</style>
       {/* Hero Banner */}
       <div className="relative h-[70vh] overflow-hidden">
         {/* Background Image with Parallax Effect */}
@@ -718,9 +756,9 @@ const TeaTouringPage = () => {
             <div className="w-20 h-1 bg-amber-400 mb-6 transform translate-x-1 md:translate-x-0"></div>
 
             {/* Main Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               <span className="block">TEA TOURS</span>
-              <span className="text-amber-400 block text-3xl md:text-4xl lg:text-5xl font-medium mt-1">
+              <span className="text-amber-400 block text-2xl md:text-3xl lg:text-4xl font-medium mt-1">
                 BY THE SRI LANKA - CHINA COMMERCIAL, CULTURAL{" "}
                 <br className="hidden lg:block" />
                 AND FRIENDSHIP ASSOCIATION
@@ -796,24 +834,7 @@ const TeaTouringPage = () => {
                   : "10-Day China Tea Experience"}
               </h2>
 
-              <div className="flex flex-wrap gap-6 mb-6">
-                <div className="flex items-center text-gray-700">
-                  <Calendar size={20} className="mr-2 text-green-600" />
-                  <span>
-                    {activeTab === "srilanka"
-                      ? "8 days, 7 nights"
-                      : "10 days, 9 nights"}
-                  </span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <Users size={20} className="mr-2 text-green-600" />
-                  <span>Small groups (max 12)</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <Clock size={20} className="mr-2 text-green-600" />
-                  <span>Available year-round</span>
-                </div>
-              </div>
+              
 
               {activeTab === "srilanka" ? (
                 <div className="space-y-4 text-gray-700">
@@ -862,7 +883,7 @@ const TeaTouringPage = () => {
               <button className="mt-8 bg-green-700 hover:bg-green-800 text-white font-medium py-3 px-6 rounded-lg transition-colors shadow-md flex items-center">
                 Book This Tour
                 <svg
-                  className="ml-2 w-5 h-5"
+                  className="ml-2 w-5 h-5 animate-slide"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -890,7 +911,7 @@ const TeaTouringPage = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
               <div className="absolute bottom-0 left-0 p-6">
-                <span className="bg-white bg-opacity-90 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-white bg-opacity-70 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
                   {activeTab === "srilanka"
                     ? "AUTHENTIC EXPERIENCE"
                     : "CULTURAL IMMERSION"}
@@ -935,15 +956,15 @@ const TeaTouringPage = () => {
       )}
 
       {/* Tour Details Section */}
-      <section className="py-16 bg-white">
+      <section className="py-1 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-green-800 mb-6 text-center">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-green-800 mb-3 text-center">
               {activeTab === "srilanka"
                 ? "TEA TOUR OF SRI LANKA"
                 : "TEA TOUR OF CHINA"}
             </h2>
-            <h3 className="text-xl font-medium text-amber-600 mb-12 text-center">
+            <h3 className="text-xl font-medium text-amber-600 mb-4 text-center">
               {activeTab === "srilanka"
                 ? "08 DAYS / 07 NIGHTS"
                 : "07 DAYS / 06 NIGHTS"}
@@ -951,105 +972,37 @@ const TeaTouringPage = () => {
 
             {/* Detailed Itinerary */}
             <div className="mb-16">
-              <h3 className="text-2xl font-bold text-green-700 mb-8 flex items-center">
-                <span className="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center mr-3 text-white">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    ></path>
-                  </svg>
-                </span>
-                Detailed Itinerary
-              </h3>
-              <div className="space-y-12">
-                {(activeTab === "srilanka"
-                  ? sriLankaItinerary
-                  : chinaItinerary
-                ).map((day, index) => (
-                  <div
-                    key={index}
-                    className="border-l-4 border-green-600 pl-6 pb-3 relative"
-                  >
-                    {/* Day indicator dot */}
-                    <div className="absolute -left-3 top-0 w-6 h-6 bg-green-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">
-                        {index + 1}
-                      </span>
-                    </div>
+              
 
-                    <div className="flex flex-col md:flex-row md:items-center gap-2 mb-3">
-                      <span className="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full">
-                        {day.day}
-                      </span>
-                      <h4 className="text-xl font-bold text-green-800">
-                        {day.title}
-                      </h4>
+              {/* Transform data for new component */}
+              <ItineraryList
+                items={(activeTab === "srilanka" ? sriLankaItinerary : chinaItinerary).map((item, index) => ({
+                  day: index + 1,
+                  title: item.title,
+                  imageSrc: item.image,
+                  imageAlt: item.imageAlt,
+                  description: item.description,
+                  note: item.accommodation ? (
+                    <div className="flex items-start">
+                     
+                      <p className="text-amber-700 font-medium italic text-sm">
+                        {item.accommodation}
+                      </p>
                     </div>
-
-                    {/* Two-column layout for desktop */}
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                      {/* Image column (2/5 width on desktop) */}
-                      <div className="md:col-span-2">
-                        <div className="rounded-lg overflow-hidden shadow-md h-56 md:h-full">
-                          <img
-                            src={day.image}
-                            alt={day.imageAlt}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Text content column (3/5 width on desktop) */}
-                      <div className="md:col-span-3">
-                        <div className="bg-green-50 p-5 rounded-lg h-full">
-                          <p className="text-gray-700 mb-3 leading-relaxed">
-                            {day.description}
-                          </p>
-                          {day.accommodation && (
-                            <p className="text-amber-700 font-medium italic flex items-center">
-                              <svg
-                                className="w-5 h-5 mr-2 text-amber-600 flex-shrink-0"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                                ></path>
-                              </svg>
-                              {day.accommodation}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ) : null
+                }))}
+              />
             </div>
 
             {/* Featured Attractions - visible for both tabs */}
             <div className="mb-16">
-              <h3 className="text-2xl font-bold text-green-800 mb-8 text-center">
+              <h3 className="text-3xl font-bold text-green-800 mb-8 text-center">
                 Featured {activeTab === "srilanka" ? "Sri Lankan" : "Chinese"}{" "}
                 Tea Experiences
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Tea Factory Visit */}
-                <div className="bg-amber-50 rounded-lg overflow-hidden shadow-md">
+                <div className="bg-amber-50 rounded-lg overflow-hidden shadow-lg">
                   <img
                     src={
                       activeTab === "srilanka"
@@ -1137,7 +1090,7 @@ const TeaTouringPage = () => {
             {tourDestinations[activeTab].map((destination, index) => (
               <div
                 key={destination.name}
-                className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:scale-105"
+                className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl"
               >
                 <div className="h-56 relative overflow-hidden">
                   <img
@@ -1171,8 +1124,7 @@ const TeaTouringPage = () => {
         </div>
       </section>
 
-      {/* Tour Details */}
-      {/* Tour Details */}
+      {/* Tour Details
       <section className="py-16 bg-green-800 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -1274,7 +1226,7 @@ const TeaTouringPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

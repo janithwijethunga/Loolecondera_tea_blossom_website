@@ -7,12 +7,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SplashScreen from "./pages/splashScreen";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import Specialties from "./pages/Specialties";
 import History from "./pages/History";
 import Touring from "./pages/Touring";
 import Contact from "./pages/Contact";
+import TermsAndConditions from "./pages/Terms";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Investintea from "./pages/investintea";
 
@@ -42,6 +45,7 @@ const App = () => {
           <SplashScreen onFinish={() => setShowSplash(false)} />
         ) : (
       <BrowserRouter>
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen font-poppins ">
           <Navbar />
           <main className="flex-grow">
@@ -53,6 +57,8 @@ const App = () => {
               <Route path="/touring" element={<Touring />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/investintea" element={<Investintea />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               {/* Add more routes as needed */}
               <Route path="*" element={<NotFound />} />
             </Routes>
