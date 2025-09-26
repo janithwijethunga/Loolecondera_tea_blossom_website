@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SplashScreen from "./pages/splashScreen";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import Specialties from "./pages/Specialties";
@@ -44,6 +45,7 @@ const App = () => {
           <SplashScreen onFinish={() => setShowSplash(false)} />
         ) : (
       <BrowserRouter>
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen font-poppins ">
           <Navbar />
           <main className="flex-grow">
