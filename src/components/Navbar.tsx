@@ -23,22 +23,22 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink to="/" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
+            <NavLink to="/" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-8' : ''}`}>
               Home
             </NavLink>
             <a href="https://store.loolecondera.lk/products" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
               Our Products
             </a>
-            <NavLink to="/specialties" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
+            <NavLink to="/specialties" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-8' : ''}`}>
               Specialties
             </NavLink>
-            <NavLink to="/history" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
+            <NavLink to="/history" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-8' : ''}`}>
               History
             </NavLink>
             {/* <NavLink to="/touring" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
               Tea Touring
             </NavLink> */}
-            <a href="https://store.loolecondera.lk/contact" className={`font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300  'text-tea-gold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
+            <a href="https://store.loolecondera.lk/contact" className="font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300">
               Contact
             </a>
             {/* <NavLink to="/investintea" className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}>
@@ -64,7 +64,7 @@ const Navbar = () => {
             <NavLink
               to="/"
               onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-8' : ''}`}
             >
               Home
             </NavLink>
@@ -78,14 +78,14 @@ const Navbar = () => {
             <NavLink
               to="/specialties"
               onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-8' : ''}`}
             >
               Specialties
             </NavLink>
             <NavLink
               to="/history"
               onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
+              className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-8' : ''}`}
             >
               History
             </NavLink>
