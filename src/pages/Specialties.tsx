@@ -154,10 +154,11 @@ const Specialties = () => {
 
   return (
     <div>
-      <HeroBanner 
-        backgroundImage={images.specialtiesBanner}
-      />
-      
+      <div className="hidden md:block">
+        <HeroBanner 
+          backgroundImage={images.specialtiesBanner}
+        />
+      </div>
       {/* What Makes Us Special Section - WITH AOS */}
       <section className="py-16 bg-white">
         <div className="tea-container">

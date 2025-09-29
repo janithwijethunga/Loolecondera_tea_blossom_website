@@ -121,11 +121,12 @@ const History = () => {
 
   return (
     <div>
-      <HeroBanner2 
-       
-        backgroundImage={images.ProductsHero1}
-      />
-      
+      <div className="hidden md:block">
+        <HeroBanner2 
+         
+          backgroundImage={images.ProductsHero1}
+        />
+      </div>
       <section className="min-h-screen flex items-center justify-center bg-white py-16">
         <div className="tea-container">
           <div className="max-w-5xl mx-auto text-center" data-aos="fade-up">

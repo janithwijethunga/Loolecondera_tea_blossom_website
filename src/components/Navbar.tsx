@@ -89,13 +89,13 @@ const Navbar = () => {
             >
               History
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/touring"
               onClick={() => setIsMenuOpen(false)}
               className={({ isActive }) => `font-medium text-tea-dark-green hover:text-tea-gold transition-colors duration-300 py-2 ${isActive ? 'text-tea-gold font-semibold underline decoration-tea-gold decoration-2 underline-offset-4' : ''}`}
             >
               Tea Touring
-            </NavLink>
+            </NavLink> */}
             <a
               href="https://store.loolecondera.lk/contact"
               onClick={() => setIsMenuOpen(false)}
