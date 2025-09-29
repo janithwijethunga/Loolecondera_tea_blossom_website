@@ -19,10 +19,10 @@ const History = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Elegant section title */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl text-white inline-block relative">
+          <h1 className="text-4xl md:text-4xl text-white inline-block relative">
             Our Heritage
             <span className="block h-1 w-24 bg-yellow-300 mx-auto mt-3"></span>
           </h1>

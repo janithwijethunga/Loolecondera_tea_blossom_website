@@ -35,6 +35,13 @@ const ContactRedirect = () => {
   return null;
 };
 
+const StoreLoginRedirect = () => {
+  React.useEffect(() => {
+    window.location.href = "https://store.loolecondera.lk/login";
+  }, []);
+  return null;
+};
+
 const App = () => {
 
   const [showSplash, setShowSplash] = useState(true);
@@ -73,6 +80,7 @@ const App = () => {
               <Route path="/investintea" element={<Investintea />} />
               <Route path="/terms" element={<TermsAndConditions />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/login" element={<StoreLoginRedirect />} />
               {/* Add more routes as needed */}
               <Route path="*" element={<NotFound />} />
             </Routes>

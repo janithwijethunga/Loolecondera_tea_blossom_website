@@ -34,13 +34,13 @@ const LoolkanduraTeaEstate = () => {
         style={{ backgroundImage: `url(${images.bg2})` }}
       />
 
-      <div className="container mx-auto px-4 pt-16  pb-12 relative z-10">
+      <div className="container mx-auto px-4 pt-16  pb-12 relative max-w-6xl z-10">
         {/* Header with animation */}
         <div
           className="text-center mb-12 animate-on-scroll opacity-0 transition-all duration-1000 ease-out transform translate-y-8"
           style={{ animationDelay: "0.2s" }}
         >
-          <h1 className="text-5xl font-bold text-green-800 tracking-wider">
+          <h1 className="text-4xl font-bold text-green-800 tracking-wider">
             LOOLKANDURA TEA ESTATE
           </h1>
           <div className="w-48 h-1 bg-green-800 mx-auto mt-4 shadow-md"></div>
@@ -88,7 +88,7 @@ const LoolkanduraTeaEstate = () => {
 
         {/* Bottom content with stylized paragraph */}
         <div
-          className=" text-center p-8 bg-green-50 bg-opacity-60 rounded-xl shadow-md animate-on-scroll opacity-0 transition-all duration-1000 ease-out transform translate-y-8"
+          className=" text-center p-8 bg-green-50 bg-opacity-0 rounded-xl  animate-on-scroll opacity-0 transition-all duration-1000 ease-out transform translate-y-8"
           style={{ animationDelay: "0.8s" }}
         >
           <p className="text-gray-800 leading-relaxed text-lg">

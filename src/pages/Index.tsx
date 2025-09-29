@@ -63,11 +63,9 @@ const Index = () => {
       
 
       <div>
-        <CeylonTea />
+       <TeaVideo />
       </div>
-      <div>
-        <Specialist />
-      </div>
+      
       <div>
         <History />
       </div>
@@ -84,7 +82,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
         <div className="relative z-10 tea-container py-20">
           <div className="text-center mb-14">
-            <h2 className="section-title inline-block mx-auto after:left-1/4 after:right-1/4 after:w-1/2 text-white text-3xl font-bold tracking-wide">
+            <h2 className="section-title inline-block text-4xl mx-auto after:left-1/4 after:right-1/4 after:w-1/2 text-white font-bold tracking-wide">
               Our Premium Teas
             </h2>
             <p className="max-w-3xl mx-auto text-lg text-white mt-4 opacity-90">
@@ -110,9 +108,9 @@ const Index = () => {
       </section>
       </div>
     
-      <div>
+      {/* <div>
         <TeaVideo />
-      </div>
+      </div> */}
       <div>
       <div className="relative w-full">
 

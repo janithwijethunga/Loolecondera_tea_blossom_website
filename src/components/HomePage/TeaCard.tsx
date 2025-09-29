@@ -18,10 +18,10 @@ const TeaCard: React.FC<TeaCardProps> = ({
 }) => {
   return (
     <div
-      className="tea-card animate-fade-up bg-white/5 border border-white/10 rounded-2xl shadow-lg backdrop-blur-md hover:scale-[1.02] transition-transform duration-300"
+      className="tea-card animate-fade-up bg-white/5 border border-white/10 rounded-2xl shadow-lg backdrop-blur-md hover:scale-[1.02] transition-transform duration-300 min-w-[300px] max-w-[380px] h-[420px]"
       style={{ animationDelay: `${animationDelay * 0.1}s` }}
     >
-      <div className="p-6 flex flex-col items-center">
+      <div className="p-6 flex flex-col items-center h-full">
         {/* Title */}
         <h3 className="text-white text-xl font-semibold text-center">
           {title}
@@ -29,7 +29,7 @@ const TeaCard: React.FC<TeaCardProps> = ({
         <hr className="w-16 my-2 border-t-2 border-tea-gold rounded-full" />
 
         {/* Image */}
-        <div className="w-full h-44 flex items-center justify-center mt-4 mb-4 rounded-xl overflow-hidden bg-white/10">
+        <div className="w-full h-36 flex items-center justify-center mt-4 mb-4 rounded-xl overflow-hidden ">
           <img
             src={imageSrc}
             alt={title}
@@ -38,12 +38,12 @@ const TeaCard: React.FC<TeaCardProps> = ({
         </div>
 
         {/* Description */}
-        <p className="text-white text-sm text-center">{description}</p>
+        <p className="text-white text-sm text-center flex-grow">{description}</p>
 
-        {/* Button (optional) */}
+        {/* Button (positioned at bottom) */}
         <Link
           to={link}
-          className="mt-6 inline-block px-5 py-2 bg-tea-gold text-tea-dark-green rounded-full text-sm font-semibold hover:bg-yellow-400 transition"
+          className="mt-4 inline-block px-5 py-2 bg-tea-gold text-tea-dark-green rounded-full text-sm font-semibold hover:bg-yellow-400 transition"
         >
           Explore
         </Link>
